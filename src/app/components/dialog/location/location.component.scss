@@ -27,6 +27,11 @@
                 border-radius: 5px;
                 min-height: 30px;
             }
+
+            .alert {
+                padding: 5px 0;
+                color: red;
+            }
         }
 
         .dialoge-button {
@@ -42,11 +47,17 @@
                 min-height: 27px;
                 font: normal normal bold 14px/16px Roboto;
                 padding: 0 10px;
+                cursor: pointer;
             }
 
             .proceed-green {
                 background: #009C56 0% 0% no-repeat padding-box;
                 color: white;
+            }
+
+            .disable {
+                cursor: default;
+                background: grey;
             }
         }
     }
