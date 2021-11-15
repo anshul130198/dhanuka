@@ -1,15 +1,22 @@
 <!-- <p>vaid component works!!!</p> -->
 <div class="valid-main">
-    <div>
-        <img src="../../../assets/icons/geniune.svg">
-        <div>Thank you for scanning GENIUNE DHANUKA Product OR Code details:</div>
+    <div class="heading">
+        <div>
+            <img class="product" src="../../../assets/icons/Poison.svg">
+            <img class="geniune" src="../../../assets/icons/geniune.svg">
+        </div>
+        <div class="thanksmsg" >Thank you for scanning GENIUNE DHANUKA Product QR Code details:</div>
     </div>
     <div class="table-container">
         <table>
             <ng-container *ngFor="let item of data | keyvalue">
-                <tr>
+                <tr *ngIf="item.key != 'Cautionary Symbol'">
                     <td class="right-border bottom-border">{{item.key}}</td>
                     <td class="bottom-border">{{item.value}}</td>
+                </tr>
+                <tr *ngIf="item.key == 'Cautionary Symbol'">
+                    <td class="right-border bottom-border">{{item.key}}</td>
+                    <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td>
                 </tr>
             </ng-container>
         </table>

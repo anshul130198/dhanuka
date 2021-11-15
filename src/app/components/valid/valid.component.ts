@@ -1,5 +1,5 @@
 import { LocationDialogeComponent } from './../dialog/location/location.component';
-import { Component } from '@angular/core';
+import { Component,  OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -16,14 +16,19 @@ export class ValidComponent {
 
   }
 
+
   data = {
     'Mfg.by': 'Dhanuka Agritech Ltd',
     'Registration No.': 'test',
     'Batch No.': 'jvhbn',
-    'Exp Date': '8564789'
-
+    'Exp Date': '8564789',
+    'Cautionary Symbol': 
+      {
+        name:'Poison',
+        imgurl:'../../../assets/icons/Poison.svg'
+      }
   }
-
+ 
   message = 'Thank you for scanning Geniune Dhanuka Products Or QR Details';
 
 
