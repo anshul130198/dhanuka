@@ -5,18 +5,25 @@
     margin-top: 2%;
     .heading{
         display: flex;
+        margin-bottom: 10px;
+        .productImg{
+            min-width: 100px;
+            min-height: 100px;
+            background-repeat: no-repeat;
+        }
         .thanksmsg{
             font: normal normal bold 30px/41px Open Sans;
             color: #009C56;
         }
         .product{
-            background-color: aquamarine;
+            width: auto;
         }
         .geniune{
-            position: absolute;
-            left: 304px;
-            width: 4%;
-            top: 225px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+            width: 50%;
+            margin-left: auto;
+            margin-top: auto;
+            display: flex;
+            margin-top: 50%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
         }
     }
     .table-container {
