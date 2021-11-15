@@ -1,7 +1,31 @@
 .valid-main {
-    width: 55%;
-    padding: 30px 19% 0 19%;
-
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    .heading{
+        display: flex;
+        margin-bottom: 10px;
+        .productImg{
+            min-width: 100px;
+            min-height: 100px;
+            background-repeat: no-repeat;
+        }
+        .thanksmsg{
+            font: normal normal bold 30px/41px Open Sans;
+            color: #009C56;
+        }
+        .product{
+            width: auto;
+        }
+        .geniune{
+            width: 50%;
+            margin-left: auto;
+            margin-top: auto;
+            display: flex;
+            margin-top: 50%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+        }
+    }
     .table-container {
         table {
             width: 100%;
@@ -14,6 +38,10 @@
             }
             .bottom-border {
                 border-bottom: 2px solid #AFD4A6;
+                font: normal normal normal 15px/26px Roboto;
+                /* letter-spacing: 0px; */
+                color: #2B2B2B;
+                padding-left: 10px;
             }
         }
 
@@ -22,6 +50,14 @@
         }
         table tr:nth-child(odd){
             background: #AFD4A6 0% 0% no-repeat padding-box;
+        }
+    }
+    #caution_td{
+        display:flex;
+        p{
+            margin-top: auto;
+            margin-bottom: auto;
+            font: normal normal bold 15px/26px Roboto;
         }
     }
 }
