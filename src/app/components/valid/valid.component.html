@@ -6,7 +6,7 @@
     </div>
     <div class="table-container">
         <table>
-            <ng-container *ngFor="let item of data | keyvalue">
+            <ng-container *ngFor="let item of data | keyvalue: originalOrder">
                 <tr>
                     <td class="right-border bottom-border">{{item.key}}</td>
                     <td class="bottom-border">{{item.value}}</td>

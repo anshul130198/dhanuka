@@ -1,6 +1,7 @@
 import { LocationDialogeComponent } from './../dialog/location/location.component';
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-valid',
@@ -48,6 +49,10 @@ export class ValidComponent {
       // let check = localStorage.getItem('newUser')
       // if (check && check != 'false') {
     })
+  }
+
+  originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
+    return 0;
   }
 
 

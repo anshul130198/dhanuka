@@ -12,6 +12,7 @@ import { LocationDialogeComponent } from './components/dialog/location/location.
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MainService } from './services/main.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   // entryComponents : [LocationDialogeComponent],
-  providers: [],
+  providers: [MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
