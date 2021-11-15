@@ -1,0 +1,64 @@
+.header-main {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .top-search {
+        display: flex;
+        flex-direction: row-reverse;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        min-height: 50px;
+        align-items: center;
+        color: #009C56;
+    }
+
+    .pd-lf-rt-2 {
+        padding: 0 2%;
+    }
+
+    input {
+        border-radius: 35px;
+        width: 180px;
+        border: 1px solid black;
+        overflow: hidden;
+        min-height: 25px;
+    }
+
+    .menu-bar {
+        display: flex;
+        background: #009C56 0% 0% no-repeat padding-box;
+
+        .menu-options {
+            width: 50%;
+            display: flex;
+
+
+            ul {
+                list-style: none;
+                display: flex;
+                width: 100%;
+                color: #FFFFFF;
+
+                li {
+                    padding: 0 7px;
+                    margin: 0;
+                }
+            }
+        }
+
+        .pd-left-10 {
+            padding-left: 10%;
+        }
+    }
+    .header-logo {
+        position: absolute;
+        left: 46%;
+        top: 5%;
+
+        img {
+            height: 90px;
+            width: 85px;
+        }
+    }
+}

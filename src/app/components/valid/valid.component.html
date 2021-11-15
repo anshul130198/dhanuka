@@ -1,0 +1,13 @@
+<!-- <p>vaid component works!!!</p> -->
+<div class="valid-main">
+    <div class="table-container">
+        <table>
+            <ng-container *ngFor="let item of data | keyvalue">
+                <tr>
+                    <td class="right-border bottom-border">{{item.key}}</td>
+                    <td class="bottom-border">{{item.value}}</td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+</div>

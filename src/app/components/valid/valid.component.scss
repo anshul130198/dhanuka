@@ -1,0 +1,27 @@
+.valid-main {
+    width: 55%;
+    padding: 30px 19% 0 19%;
+
+    .table-container {
+        table {
+            width: 100%;
+            border-right: 2px solid #AFD4A6;
+            border-top: 2px solid #AFD4A6;
+            border-left: 2px solid #AFD4A6;
+
+            .right-border {
+                border-right: 2px solid #AFD4A6;
+            }
+            .bottom-border {
+                border-bottom: 2px solid #AFD4A6;
+            }
+        }
+
+        table tr:nth-child(even){
+            background: #E9F1E9 0% 0% no-repeat padding-box;
+        }
+        table tr:nth-child(odd){
+            background: #AFD4A6 0% 0% no-repeat padding-box;
+        }
+    }
+}
