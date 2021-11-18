@@ -8,7 +8,7 @@
     </div>
     <div class="table-container">
         <table>
-            <ng-container *ngFor="let item of data | keyvalue">
+            <ng-container *ngFor="let item of data | keyvalue: originalOrder">
                 <tr *ngIf="item.key != 'Cautionary Symbol' && item.key != 'Label information' && item.key != 'Leaflet information' && item.key != 'Product video' ">
                     <td class="right-border bottom-border">{{item.key}}</td>
                     <td class="bottom-border">{{item.value}}</td>
