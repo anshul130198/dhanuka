@@ -15,11 +15,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            .invalid-heading{
+                text-align: center;
+                font: normal normal bold 25px/33px Roboto;
+                color: red;
+                padding: 10px;
+            }
             .invalid-sentense {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                span{
+                    font: normal normal normal 15px/26px Roboto;
+                }
             }
         }
     }
@@ -31,12 +39,38 @@
         margin-top: 15px;
         justify-content: center;
         text-align: center;
-
+        #addPic{
+            font: normal normal bold 14px/24px Roboto;
+        }
+        span{
+            font: normal normal normal 15px/20px Roboto;
+        }
         .social-connection {
             display: flex;
             align-items: center;
             width: 20%;
             justify-content: flex-start;
+        }
+    }
+}
+
+@media only screen and ( max-width:640px) and (min-width:320px) {
+    .invalid-main{
+        .check-heading{
+            width: 90%;
+            .social-connection{
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .invalid-container{
+            .invalid-icon-name{
+                width: 90%;
+                .invalid-heading{
+                    font: normal normal bold 17px/20px Roboto;
+                }
+            }
         }
     }
 }
