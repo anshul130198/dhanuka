@@ -1,3 +1,4 @@
+import { MainService } from './../../services/main.service';
 import { LocationDialogeComponent } from './../dialog/location/location.component';
 import { Component,  OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -12,8 +13,10 @@ export class ValidComponent {
 
   locationDialogRef: MatDialogRef<LocationDialogeComponent>;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog,
+    private mainService: MainService) {
     this.userStartPopUp();
+
 
   }
 
