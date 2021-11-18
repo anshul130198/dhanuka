@@ -1,6 +1,8 @@
+import { MainService } from './../../services/main.service';
 import { LocationDialogeComponent } from './../dialog/location/location.component';
 import { Component,  OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-valid',
@@ -11,8 +13,10 @@ export class ValidComponent {
 
   locationDialogRef: MatDialogRef<LocationDialogeComponent>;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog,
+    private mainService: MainService) {
     this.userStartPopUp();
+
 
   }
 
@@ -58,6 +62,10 @@ export class ValidComponent {
       // let check = localStorage.getItem('newUser')
       // if (check && check != 'false') {
     })
+  }
+
+  originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
+    return 0;
   }
 
 

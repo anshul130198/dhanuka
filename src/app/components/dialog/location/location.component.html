@@ -5,33 +5,33 @@
 
             <div class="fields">
                 <label>Name</label>
-                <input type="text" class="form-control" formControlName="name" id="name" />
-                <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">  
-                    <div *ngIf="f.name.errors.required">Name is required.</div>  
-                    <div *ngIf="f.name.errors.maxLength">Name should not exceed 100 characters.</div>  
-                </div> 
+                <input type="text" class="form-control" formControlName="name" id="name" max="100" />
+                <div *ngIf="f.name.touched && f.name.invalid" class="alert">
+                    <div *ngIf="f.name.errors.required">Name is required.</div>
+                    <div *ngIf="f.name.errors.maxLength">Name should not exceed 100 characters.</div>
+                </div>
             </div>
 
             <div class="fields">
                 <label>Mobile Number</label>
                 <input type="text" class="form-control" formControlName="mobile" id="mobile" />
-                <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert alert-danger">  
-                    <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>  
-                    <div *ngIf="f.mobile.errors.pattern">Please, Enter 10 digit Mobile Number.</div>  
-                </div> 
+                <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert">
+                    <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>
+                    <div *ngIf="f.mobile.errors.pattern">Please, Enter a valid 10 digit Mobile Number.</div>
+                </div>
             </div>
 
             <div class="fields">
                 <label>Location</label>
-                <input type="text" class="form-control" formControlName="location" id="location" />
-                <div *ngIf="f.location.touched && f.location.invalid" class="alert alert-danger">  
-                    <div *ngIf="f.location.errors.maxLength">Location should not exceed 100 characters.</div>  
-                </div> 
+                <input type="text" class="form-control" formControlName="location" id="location" max="100" />
+                <div *ngIf="f.location.touched && f.location.invalid" class="alert">
+                    <div *ngIf="f.location.errors.maxLength">Location should not exceed 100 characters.</div>
+                </div>
             </div>
 
             <div class="dialoge-button">
                 <button>Cancel</button>
-                <button class="proceed-green">Proceed</button>
+                <button [class.disable]="!form.valid" [disabled]="!form.valid" class="proceed-green">Proceed</button>
             </div>
         </form>
 
