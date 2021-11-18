@@ -60,6 +60,14 @@
             font: normal normal bold 15px/26px Roboto;
         }
     }
+    #redirectLink{
+        a{
+            text-decoration: none;
+                font: normal normal bold 15px/26px Roboto;
+                color: #0044FF;
+                cursor: pointer;
+        }
+    }
 }
 
 @media only screen and ( max-width:640px) and (min-width:320px) {

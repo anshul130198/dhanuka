@@ -9,13 +9,17 @@
     <div class="table-container">
         <table>
             <ng-container *ngFor="let item of data | keyvalue">
-                <tr *ngIf="item.key != 'Cautionary Symbol'">
+                <tr *ngIf="item.key != 'Cautionary Symbol' && item.key != 'Label information' && item.key != 'Leaflet information' && item.key != 'Product video' ">
                     <td class="right-border bottom-border">{{item.key}}</td>
                     <td class="bottom-border">{{item.value}}</td>
                 </tr>
                 <tr *ngIf="item.key == 'Cautionary Symbol'">
                     <td class="right-border bottom-border">{{item.key}}</td>
                     <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td>
+                </tr>
+                 <tr *ngIf="item.key == 'Label information' || item.key == 'Leaflet information' || item.key == 'Product video' ">
+                    <td class="right-border bottom-border">{{item.key}}</td>
+                    <td class="bottom-border" id="redirectLink"><a href="{{item.value}}" target="_blank">Click on the link to see</a></td>
                 </tr>
             </ng-container>
         </table>

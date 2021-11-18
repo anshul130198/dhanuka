@@ -26,7 +26,12 @@ export class ValidComponent {
       {
         name:'Poison',
         imgurl:'../../../assets/icons/Poison.svg'
-      }
+      },
+      'Antidote Statement':'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+      'Customer Care No.': '1800-102-1022',
+      'Label information':'#1',
+      'Leaflet information':'#2',
+      'Product video':'#3',
   }
  
   message = 'Thank you for scanning Geniune Dhanuka Products Or QR Details';
