@@ -61,3 +61,17 @@
         }
     }
 }
+
+@media only screen and ( max-width:640px) and (min-width:320px) {
+    .valid-main{
+        width: 90%;
+        .heading{
+            .thanksmsg{
+                font: normal normal bold 14px/19px Open Sans;
+                margin-top: auto;
+                margin-bottom: auto;
+                padding-left: 10px;
+            }
+        }
+    }
+}

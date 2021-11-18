@@ -1,3 +1,31 @@
+<!--hamburger menu display-->
+<div [@onOff] [class.HamShow]="showNav" [class.HamHide]="!showNav">
+    <div class="HamStructure">
+        <div class="HamView">
+            <div class="HamTop">
+                <div class="pd-lf-rt-2">SELECT LANGUAGE</div>
+                <div class="pd-lf-rt-2">ENGLISH</div>
+            </div>
+            <div class="HamMenu">
+                <div class="HamOption">
+                    <ul>
+                        <li>HOME</li>
+                        <li>ABOUT US</li>
+                        <li>R&D</li>
+                        <li>CROP SOLUTIONS</li>
+                        <li>IVESTORS</li>
+                        <li>CARRERS</li>
+                        <li>CONTACT US</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="HamBlank" (click)="toggleNav()">
+
+        </div>
+    </div>
+</div>
+
 <!-- <p>header component works!!</p> -->
 <div class="header-main">
     <div class="top-search">
@@ -10,6 +38,9 @@
         <div class="pd-lf-rt-2">SELECT LANGUAGE</div>
     </div>
     <div class="menu-bar">
+        <div class="hamburger" (click)="toggleNav()">
+            <img src="../../../assets/icons/hamburger.svg">
+        </div>
         <div class="menu-options pd-left-10">
             <ul>
                 <li>HOME</li>
