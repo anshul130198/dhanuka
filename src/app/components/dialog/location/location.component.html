@@ -1,7 +1,8 @@
 <div class="loacation-dialog-container">
     <p>Please provide your details to see QR code details.</p>
     <div class="container">
-        <form [formGroup]="form" (ngSubmit)="submit()">
+        <form [formGroup]="form">
+            <!-- (ngSubmit)="submit()" -->
 
             <div class="fields">
                 <label>Name</label>
@@ -30,8 +31,8 @@
             </div>
 
             <div class="dialoge-button">
-                <button>Cancel</button>
-                <button [class.disable]="!form.valid" [disabled]="!form.valid" class="proceed-green">Proceed</button>
+                <button (click)="onClose()">Cancel</button>
+                <button (click)="submit()" [class.disable]="!form.valid" [disabled]="!form.valid" class="proceed-green">Proceed</button>
             </div>
         </form>
 

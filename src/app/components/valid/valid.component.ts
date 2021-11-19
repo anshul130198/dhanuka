@@ -14,30 +14,50 @@ export class ValidComponent {
 
   locationDialogRef: MatDialogRef<LocationDialogeComponent>;
   showDataTable: boolean = false;
+  tableData: any;
+  status: boolean = false;
 
   constructor(private dialog: MatDialog,
     private mainService: MainService,
     private router: Router) {
     this.userStartPopUp();
-    console.log(this.router.url)
+    // console.log(this.router.url)
     this.getProductData(this.router.url);
   }
 
+  // data = {
+  //   'Mfg.by': 'Dhanuka Agritech Ltd',
+  //   'Registration No.': 'test',
+  //   'Batch No.': 'jvhbn',
+  //   'Exp Date': '8564789',
+  //   'Cautionary Symbol':
+  //   {
+  //     name: 'Poison',
+  //     imgurl: '../../../assets/icons/Poison.svg'
+  //   },
+  //   'Antidote Statement': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+  //   'Customer Care No.': '1800-102-1022',
+  //   'Label information': '#1',
+  //   'Leaflet information': '#2',
+  //   'Product video': '#3',
+  // }
+
   data = {
-    'Mfg.by': 'Dhanuka Agritech Ltd',
-    'Registration No.': 'test',
-    'Batch No.': 'jvhbn',
-    'Exp Date': '8564789',
-    'Cautionary Symbol':
-    {
-      name: 'Poison',
-      imgurl: '../../../assets/icons/Poison.svg'
-    },
-    'Antidote Statement': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-    'Customer Care No.': '1800-102-1022',
-    'Label information': '#1',
-    'Leaflet information': '#2',
-    'Product video': '#3',
+    'mfg_by': 'Mfg.by',
+    'registration_no': 'Registration No.',
+    'batch_no': 'Batch No.',
+    'date_of_mfg': 'Date of Mfg.',
+    'date_of_expiry': 'Exp Date',
+    'product_name': 'Product name',
+    'cautionary_symbol': 'Cautionary Symbol',
+    'customer_care_no': 'Customer Care No.',
+    'marketed_by': 'Marketed by',
+    'uid': 'UID',
+    'antidote_statement': 'Antidote Statement',
+    'label_information': 'Label information',
+    'leaflet_information': 'Leaflet information',
+    'product_video': 'Product video',
+    'cautionary_symbol_picture' : 'Cautionary Image Url'
   }
 
   userStartPopUp() {
@@ -51,7 +71,11 @@ export class ValidComponent {
 
     this.locationDialogRef.afterClosed().subscribe(result => {
       console.log(result);
-      this.showDataTable = true;
+      if(this.status && this.tableData) {
+        this.showDataTable = true;
+      } else {
+        this.router.navigateByUrl('/invalid');
+      }
     })
   }
 
@@ -60,8 +84,17 @@ export class ValidComponent {
   }
 
   getProductData(url) {
-    this.mainService.getProductData(url).subscribe(res => {
+    let obj = {
+      // url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
+      url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
+    }
+    this.mainService.getProductData(obj).subscribe(res => {
+      this.tableData = res['result'][0];
+      this.status = res['status']
+      localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
       console.log(res);
+    }, err => {
+      console.log(err);
     })
 
   }

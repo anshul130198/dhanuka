@@ -11,12 +11,15 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class LocationDialogeComponent {
 
   form: FormGroup;
+  lat:any;
+  long:any;
+  coordinates;
 
   constructor(private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<LocationDialogeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private mainService: MainService) {
-    this.askForLocation();
+     this.coordinates = this.askForLocation();
 
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(100)]],
@@ -29,28 +32,43 @@ export class LocationDialogeComponent {
     return this.form.controls;
   }
 
+  // askForLocation() {
+  //   navigator.geolocation.getCurrentPosition(function (position) {
+  //     console.log(position.coords);
+  //     return position.coords;
+  //   }, function () {
+  //   }, { timeout: 10000 })
+  // }
+
   askForLocation() {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      alert('Location accessed');
-      console.log(position.coords);
-    }, function () {
-      alert('User not allowed')
-    }, { timeout: 10000 })
+    navigator.geolocation.getCurrentPosition((pos)=>this.setPosition(pos))
+  }
+
+  setPosition(pos) {
+    // console.log(pos);
+    this.coordinates = pos.coords;
+    console.log(this.coordinates);
+    console.log(this.coordinates.latitude);
+    console.log(this.coordinates.longitude);
   }
 
   onClose() {
+    console.log(this.coordinates)
     this.dialogRef.close();
   }
 
   submit() {
     console.log(this.form.value);
+
     let obj = {
-      name: this.form.get('name').value,
-      mobile: this.form.get('mobile').value,
-      location: this.form.get('location').value,
-      userLocation: ''
+      username: this.form.get('name').value,
+      phone_no: this.form.get('mobile').value,
+      user_location: this.form.get('location').value,
+      lat: this.coordinates? this.coordinates.latitude : '' ,
+      long: this.coordinates? this.coordinates.longitude : ''
     }
-    this.mainService.sendLocationDetails(obj).subscribe(res=>{
+    let auth = localStorage.getItem('auth_session');
+    this.mainService.sendLocationDetails(obj,auth).subscribe(res=>{
 
     })
     this.dialogRef.close(this.form.value);
