@@ -11,6 +11,12 @@
             min-width: 100px;
             min-height: 100px;
             background-repeat: no-repeat;
+            max-height: 124px;
+
+            .product-url {
+                max-height: 124px;
+                min-height: 100px;
+            }
         }
         .thanksmsg{
             font: normal normal bold 30px/41px Open Sans;
@@ -26,7 +32,7 @@
             display: flex;
             // margin-top: 50%;      
             position: relative;
-            bottom: 35%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            bottom: 40%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
         }
     }
     .table-container {

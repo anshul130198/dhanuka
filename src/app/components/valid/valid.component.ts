@@ -23,11 +23,10 @@ export class ValidComponent {
     private router: Router,
     private route: ActivatedRoute) {
     this.userStartPopUp();
-    this.route.queryParams.subscribe( params =>  {
-      console.log(params);
-    })
+    // this.route.queryParams.subscribe( params =>  {
+    //   console.log(params);
+    // })
     console.log(this.route.snapshot.queryParamMap.get('URL'))
-    // console.log(this.router.url)
     this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
   }
 
@@ -63,7 +62,6 @@ export class ValidComponent {
     'label_information': 'Label information',
     'leaflet_information': 'Leaflet information',
     'product_video': 'Product video',
-    // 'cautionary_symbol_picture' : 'Cautionary Image Url'
   }
 
   userStartPopUp() {
@@ -77,7 +75,7 @@ export class ValidComponent {
 
     this.locationDialogRef.afterClosed().subscribe(result => {
       console.log(result);
-      if(this.status && this.tableData) {
+      if (this.status && this.tableData) {
         this.showDataTable = true;
       } else {
         this.router.navigateByUrl('QRCODE/invalid');
@@ -97,12 +95,14 @@ export class ValidComponent {
       // url: 'hggb'
     }
     this.mainService.getProductData(obj).subscribe(res => {
+      console.log(res['status']);
       this.tableData = res['result'][0];
       this.status = res['status']
       localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
       console.log(res);
     }, err => {
       console.log(err);
+      this.router.navigateByUrl('Error');
     })
 
   }

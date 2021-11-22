@@ -4,7 +4,8 @@
 <div class="valid-main" *ngIf="showDataTable">
     <div class="heading">
         <div class="productImg">
-            <img src="../../../assets/icons/Poison.svg">
+            <!-- <img src="../../../assets/icons/Poison.svg"> -->
+            <img class="product-url" src="{{tableData['product_picture']}}">
             <img class="geniune" src="../../../assets/icons/geniune.svg">
         </div>
         <div class="thanksmsg">Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}} QR Code details:
@@ -30,8 +31,8 @@
                     <td class="right-border bottom-border">{{data[item.key]}}</td>
                     <!-- <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td> -->
                     <td class="bottom-border" id="caution_td">
-                        <!-- <img src="{{tableData['cautionary_symbol_picture']}}"> -->
-                        <img class="geniune" src="../../../assets/icons/geniune.svg">
+                        <img src="{{tableData['cautionary_symbol_picture']}}">
+                        <!-- <img class="geniune" src="../../../assets/icons/geniune.svg"> -->
                         <p>{{tableData[item.key]}}</p>
                     </td>
                 </tr>
