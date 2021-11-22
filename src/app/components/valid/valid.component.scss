@@ -46,7 +46,7 @@
                 border-right: 2px solid #AFD4A6;
             }
             .bottom-border {
-                border-bottom: 2px solid #AFD4A6;
+                border-bottom: 2px solid #86d173;
                 font: normal normal normal 15px/26px Roboto;
                 /* letter-spacing: 0px; */
                 color: #2B2B2B;
@@ -55,10 +55,10 @@
         }
 
         table tr:nth-child(even){
-            background: #E9F1E9 0% 0% no-repeat padding-box;
+            background: #e9efe8 0% 0% no-repeat padding-box;
         }
         table tr:nth-child(odd){
-            background: #AFD4A6 0% 0% no-repeat padding-box;
+            background: #d7e1cf 0% 0% no-repeat padding-box;
         }
     }
     #caution_td{
