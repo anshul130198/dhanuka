@@ -89,10 +89,10 @@ export class ValidComponent {
 
   getProductData(url) {
     let obj = {
-      url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
+      // url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
       // url: encodeURIComponent(url)
+      url: url
       // url: decodeURIComponent(url)
-      // url: 'hggb'
     }
     this.mainService.getProductData(obj).subscribe(res => {
       console.log(res['status']);
