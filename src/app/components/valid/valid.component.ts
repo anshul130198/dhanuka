@@ -31,6 +31,23 @@ export class ValidComponent {
     this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
   }
 
+  // data = {
+  //   'Mfg.by': 'Dhanuka Agritech Ltd',
+  //   'Registration No.': 'test',
+  //   'Batch No.': 'jvhbn',
+  //   'Exp Date': '8564789',
+  //   'Cautionary Symbol':
+  //   {
+  //     name: 'Poison',
+  //     imgurl: '../../../assets/icons/Poison.svg'
+  //   },
+  //   'Antidote Statement': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+  //   'Customer Care No.': '1800-102-1022',
+  //   'Label information': '#1',
+  //   'Leaflet information': '#2',
+  //   'Product video': '#3',
+  // }
+
   data = {
     'mfg_by': 'Mfg.by',
     'registration_no': 'Registration No.',
@@ -74,9 +91,10 @@ export class ValidComponent {
 
   getProductData(url) {
     let obj = {
-      // url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
-      url: encodeURIComponent(url)
+      url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
+      // url: encodeURIComponent(url)
       // url: decodeURIComponent(url)
+      // url: 'hggb'
     }
     this.mainService.getProductData(obj).subscribe(res => {
       this.tableData = res['result'][0];
