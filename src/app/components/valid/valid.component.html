@@ -6,25 +6,39 @@
         <div class="productImg" style="background-image: url('../../../assets/icons/Poison.svg');">
             <img class="geniune" src="../../../assets/icons/geniune.svg">
         </div>
-        <div class="thanksmsg" >Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}} QR Code details:</div>
+        <div class="thanksmsg">Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}} QR Code details:
+        </div>
     </div>
     <div class="table-container">
         <table>
             <!-- <ng-container *ngFor="let item of data | keyvalue: originalOrder"> -->
             <ng-container *ngFor="let item of data | keyvalue: originalOrder">
                 <!-- tableData -->
-                <tr *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' ">
+                <tr
+                    *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' ">
                     <td class="right-border bottom-border">{{data[item.key]}}</td>
                     <td class="bottom-border">{{tableData[item.key]}}</td>
+                </tr>
+                <tr *ngIf="item.key == 'product_name'">
+                    <td class="right-border bottom-border">{{data[item.key]}}</td>
+                    <td class="bottom-border" id="redirectLink">{{tableData[item.key]}}
+                        <a href="{{tableData['product_url']}}" target="_blank">Click on the link to see</a>
+                    </td>
                 </tr>
                 <tr *ngIf="item.key == 'cautionary_symbol'">
                     <td class="right-border bottom-border">{{data[item.key]}}</td>
                     <!-- <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td> -->
-                    <td class="bottom-border" id="caution_td"><img src="{{tableData['cautionary_symbol_picture']}}"><p>{{tableData[item.key]}}</p></td>
+                    <td class="bottom-border" id="caution_td">
+                        <!-- <img src="{{tableData['cautionary_symbol_picture']}}"> -->
+                        <img class="geniune" src="../../../assets/icons/geniune.svg">
+                        <p>{{tableData[item.key]}}</p>
+                    </td>
                 </tr>
-                 <tr *ngIf="item.key == 'label_information' || item.key == 'leaflet_information' || item.key == 'product_video' ">
+                <tr
+                    *ngIf="item.key == 'label_information' || item.key == 'leaflet_information' || item.key == 'product_video' ">
                     <td class="right-border bottom-border">{{data[item.key]}}</td>
-                    <td class="bottom-border" id="redirectLink"><a href="{{tableData[item.key]}}" target="_blank">Click on the link to see</a></td>
+                    <td class="bottom-border" id="redirectLink"><a href="{{tableData[item.key]}}" target="_blank">Click
+                            on the link to see</a></td>
                 </tr>
             </ng-container>
         </table>

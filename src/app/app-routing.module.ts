@@ -6,7 +6,7 @@ import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [
   {
-    path: '', component: LandingComponent,
+    path: 'QRCODE', component: LandingComponent,
     children: [
       {
         path: '',
@@ -14,7 +14,7 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'valid',
+        path: '',
         component: ValidComponent
       },
       {

@@ -3,7 +3,8 @@ import { LocationDialogeComponent } from './../dialog/location/location.componen
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { KeyValue } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-valid',
@@ -19,28 +20,16 @@ export class ValidComponent {
 
   constructor(private dialog: MatDialog,
     private mainService: MainService,
-    private router: Router) {
+    private router: Router,
+    private route: ActivatedRoute) {
     this.userStartPopUp();
+    this.route.queryParams.subscribe( params =>  {
+      console.log(params);
+    })
+    console.log(this.route.snapshot.queryParamMap.get('URL'))
     // console.log(this.router.url)
-    this.getProductData(this.router.url);
+    this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
   }
-
-  // data = {
-  //   'Mfg.by': 'Dhanuka Agritech Ltd',
-  //   'Registration No.': 'test',
-  //   'Batch No.': 'jvhbn',
-  //   'Exp Date': '8564789',
-  //   'Cautionary Symbol':
-  //   {
-  //     name: 'Poison',
-  //     imgurl: '../../../assets/icons/Poison.svg'
-  //   },
-  //   'Antidote Statement': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-  //   'Customer Care No.': '1800-102-1022',
-  //   'Label information': '#1',
-  //   'Leaflet information': '#2',
-  //   'Product video': '#3',
-  // }
 
   data = {
     'mfg_by': 'Mfg.by',
@@ -57,7 +46,7 @@ export class ValidComponent {
     'label_information': 'Label information',
     'leaflet_information': 'Leaflet information',
     'product_video': 'Product video',
-    'cautionary_symbol_picture' : 'Cautionary Image Url'
+    // 'cautionary_symbol_picture' : 'Cautionary Image Url'
   }
 
   userStartPopUp() {
@@ -74,7 +63,7 @@ export class ValidComponent {
       if(this.status && this.tableData) {
         this.showDataTable = true;
       } else {
-        this.router.navigateByUrl('/invalid');
+        this.router.navigateByUrl('QRCODE/invalid');
       }
     })
   }
@@ -86,7 +75,8 @@ export class ValidComponent {
   getProductData(url) {
     let obj = {
       // url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
-      url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
+      url: encodeURIComponent(url)
+      // url: decodeURIComponent(url)
     }
     this.mainService.getProductData(obj).subscribe(res => {
       this.tableData = res['result'][0];
