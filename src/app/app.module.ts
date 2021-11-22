@@ -14,6 +14,7 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainService } from './services/main.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     ValidComponent,
     InvalidComponent,
-    LocationDialogeComponent
+    LocationDialogeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

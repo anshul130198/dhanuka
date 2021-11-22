@@ -3,6 +3,7 @@ import { ValidComponent } from './components/valid/valid.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
           component: InvalidComponent
       }
     ]
+  },
+  {
+    path:'Error',
+    component: ErrorComponent
   }
 ];
 
