@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-error',
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })
-export class ErrorComponent implements OnInit {
+export class ErrorComponent implements OnDestroy {
 
-  constructor() { }
+  number: any;
+  mail: any;
 
-  ngOnInit(): void {
+  constructor() {
+    this.number = localStorage.getItem('number');
+    this.mail = localStorage.getItem('email');
   }
+
+  ngOnDestroy() {
+    localStorage.clear();
+  }
+
 
 }

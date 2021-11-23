@@ -17,6 +17,7 @@ export class ValidComponent {
   showDataTable: boolean = false;
   tableData: any;
   status: boolean = false;
+  showError: boolean = false;
 
   constructor(private dialog: MatDialog,
     private mainService: MainService,
@@ -26,8 +27,8 @@ export class ValidComponent {
     // this.route.queryParams.subscribe( params =>  {
     //   console.log(params);
     // })
-    console.log(this.route.snapshot.queryParamMap.get('URL'))
     this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
+    this.getEmailAndNumber();
   }
 
   // data = {
@@ -74,10 +75,13 @@ export class ValidComponent {
     });
 
     this.locationDialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (this.status && this.tableData) {
         this.showDataTable = true;
-      } else {
+      }
+      else if (this.showError) {
+        this.router.navigateByUrl('Error');
+      }
+      else if (this.tableData = []) {
         this.router.navigateByUrl('QRCODE/invalid');
       }
     })
@@ -85,6 +89,14 @@ export class ValidComponent {
 
   originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
     return 0;
+  }
+
+  getEmailAndNumber() {
+    this.mainService.getNumber().subscribe(res=> {
+      console.log(res['result']);
+      localStorage.setItem('email', res['result'][1].value)
+      localStorage.setItem('number', res['result'][0].value)
+    })
   }
 
   getProductData(url) {
@@ -95,13 +107,12 @@ export class ValidComponent {
       // url: decodeURIComponent(url)
     }
     this.mainService.getProductData(obj).subscribe(res => {
-      console.log(res['status']);
       this.tableData = res['result'][0];
       this.status = res['status']
       localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
-      console.log(res);
     }, err => {
       console.log(err);
+      this.showError = true;
       this.router.navigateByUrl('Error');
     })
 

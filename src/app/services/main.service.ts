@@ -20,4 +20,8 @@ export class MainService {
         return this.http.put(`${this.baseUrl}api/update/qrcode-auth-logs/${auth}`, obj)
     }
 
+    getNumber() {
+        return this.http.get(`${this.baseUrl}api/general-preferences/whatspp-email`)
+    }
+
 }

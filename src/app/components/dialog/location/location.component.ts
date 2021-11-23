@@ -47,13 +47,9 @@ export class LocationDialogeComponent {
   setPosition(pos) {
     // console.log(pos);
     this.coordinates = pos.coords;
-    console.log(this.coordinates);
-    console.log(this.coordinates.latitude);
-    console.log(this.coordinates.longitude);
   }
 
   onClose() {
-    console.log(this.coordinates)
     this.dialogRef.close();
   }
 
