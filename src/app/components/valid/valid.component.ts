@@ -113,7 +113,7 @@ export class ValidComponent {
     }, err => {
       console.log(err);
       this.showError = true;
-      this.router.navigateByUrl('Error');
+      // this.router.navigateByUrl('Error');
     })
 
   }
