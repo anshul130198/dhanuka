@@ -8,7 +8,8 @@
             <img class="product-url" src="{{tableData['product_picture']}}">
             <img class="geniune" src="../../../assets/icons/geniune.svg">
         </div>
-        <div class="thanksmsg">Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}} QR Code details:
+        <div class="thanksmsg">Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}}.<br> QR Code
+            details:
         </div>
     </div>
     <div class="table-container">
@@ -17,12 +18,15 @@
             <ng-container *ngFor="let item of data | keyvalue: originalOrder">
                 <!-- tableData -->
                 <tr
-                    *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' ">
+                    *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' && item.key !='product_name'">
                     <td class="right-border bottom-border">{{data[item.key]}}</td>
                     <td class="bottom-border">{{tableData[item.key]}}</td>
                 </tr>
                 <tr *ngIf="item.key == 'product_name'">
-                    <td class="right-border bottom-border">{{data[item.key]}}</td>
+                    <td class="right-border bottom-border">
+                        <a href="{{tableData['product_url']}}" target="_blank">
+                            <b>{{data[item.key]}}</b></a>
+                    </td>
                     <td class="bottom-border" id="redirectLink">{{tableData[item.key]}}
                         <a href="{{tableData['product_url']}}" target="_blank">Click on the link to see</a>
                     </td>
