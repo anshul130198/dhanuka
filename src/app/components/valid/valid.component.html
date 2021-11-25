@@ -23,12 +23,15 @@
                     <td class="bottom-border">{{tableData[item.key]}}</td>
                 </tr>
                 <tr *ngIf="item.key == 'product_name'">
-                    <td class="right-border bottom-border">
+                    <td class="right-border bottom-border name">
                         <a href="{{tableData['product_url']}}" target="_blank">
                             <b>{{data[item.key]}}</b></a>
                     </td>
-                    <td class="bottom-border" id="redirectLink">{{tableData[item.key]}}
-                        <a href="{{tableData['product_url']}}" target="_blank">Click on the link to see</a>
+                    <td class="bottom-border special_td" id="redirectLink">{{tableData[item.key]}}
+                        <a href="{{tableData['product_url']}}" target="_blank">Click on the link to see
+                            <!-- <img src="../../../assets/icons/hand.gif"> -->
+                        </a>
+                        <img src="../../../assets/icons/hand.gif">
                     </td>
                 </tr>
                 <tr *ngIf="item.key == 'cautionary_symbol'">
