@@ -36,7 +36,8 @@
 
         .dialoge-button {
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
+            justify-content: flex-end;
             margin: 20px 0;
 
             button {
