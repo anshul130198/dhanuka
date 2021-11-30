@@ -1,1 +1,40 @@
-<h1>location detail works!!!</h1>
+<div>
+    <p>Please provide your details to see QR code details.</p>
+    <div class="container">
+        <form [formGroup]="form">
+            <!-- (ngSubmit)="submit()" -->
+
+            <div class="fields">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name" id="name" max="100" />
+                <div *ngIf="f.name.touched && f.name.invalid" class="alert">
+                    <div *ngIf="f.name.errors.required">Name is required.</div>
+                    <div *ngIf="f.name.errors.maxLength">Name should not exceed 100 characters.</div>
+                </div>
+            </div>
+
+            <div class="fields">
+                <label>Mobile Number</label>
+                <input type="text" class="form-control" formControlName="mobile" id="mobile" />
+                <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert">
+                    <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>
+                    <div *ngIf="f.mobile.errors.pattern">Please, Enter a valid 10 digit Mobile Number.</div>
+                </div>
+            </div>
+
+            <div class="fields">
+                <label>Location</label>
+                <input type="text" class="form-control" formControlName="location" id="location" max="100" />
+                <div *ngIf="f.location.touched && f.location.invalid" class="alert">
+                    <div *ngIf="f.location.errors.maxLength">Location should not exceed 100 characters.</div>
+                </div>
+            </div>
+
+            <div class="dialoge-button">
+                <!--<button (click)="onClose()">Cancel</button>-->
+                <button (click)="submit()" [class.disable]="!form.valid" [disabled]="!form.valid" class="proceed-green">Proceed</button>
+            </div>
+        </form>
+
+    </div>
+</div>

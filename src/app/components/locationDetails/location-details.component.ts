@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -17,7 +17,8 @@ export class LocationDetailComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder,
         private mainService: MainService,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private router: Router) {
 
         this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
         this.getEmailAndNumber();
@@ -64,7 +65,7 @@ export class LocationDetailComponent implements OnInit {
         this.mainService.getProductData(obj).subscribe(res => {
             localStorage.setItem('tableData', JSON.stringify(res['result'][0]));
             localStorage.setItem('status', res['status']);
-            localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
+            localStorage.setItem('auth_session', res['result'][0]['auth_session']);
         }, err => {
             console.log(err);
             localStorage.setItem('showError', 'true');
@@ -84,6 +85,7 @@ export class LocationDetailComponent implements OnInit {
         }
         let auth = localStorage.getItem('auth_session');
         this.mainService.sendLocationDetails(obj, auth).subscribe(res => {
+            this.router.navigateByUrl('/valid');
         })
     }
 
