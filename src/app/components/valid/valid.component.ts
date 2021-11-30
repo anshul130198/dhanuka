@@ -1,10 +1,9 @@
 import { MainService } from './../../services/main.service';
 import { LocationDialogeComponent } from './../dialog/location/location.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component} from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { KeyValue } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-valid',
@@ -19,16 +18,17 @@ export class ValidComponent {
   status: boolean = false;
   showError: boolean = false;
 
-  constructor(private dialog: MatDialog,
-    private mainService: MainService,
+  constructor(private mainService: MainService,
     private router: Router,
     private route: ActivatedRoute) {
-    this.userStartPopUp();
+      this.tableData = JSON.parse(localStorage.getItem('tableData'));
+      this.status = localStorage.getItem('status') === 'true'? true: false;
+      // localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
+
+
     // this.route.queryParams.subscribe( params =>  {
     //   console.log(params);
     // })
-    this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
-    this.getEmailAndNumber();
   }
 
   // data = {
@@ -65,57 +65,8 @@ export class ValidComponent {
     'product_video': 'Product video',
   }
 
-  userStartPopUp() {
-    this.locationDialogRef = this.dialog.open(LocationDialogeComponent, {
-      disableClose: true,
-      panelClass: 'custom-dialog-container',
-      height: 'auto',
-      width: 'auto',
-      data: {}
-    });
-
-    this.locationDialogRef.afterClosed().subscribe(result => {
-      if (this.status && this.tableData) {
-        this.showDataTable = true;
-      }
-      else if (this.showError) {
-        this.router.navigateByUrl('Error');
-      }
-      else {
-        this.router.navigateByUrl('QRCODE/invalid');
-      }
-    })
-  }
-
   originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
     return 0;
-  }
-
-  getEmailAndNumber() {
-    this.mainService.getNumber().subscribe(res=> {
-      console.log(res['result']);
-      localStorage.setItem('email', res['result'][1].value)
-      localStorage.setItem('number', res['result'][0].value)
-    })
-  }
-
-  getProductData(url) {
-    let obj = {
-      // url: 'HTTPS://DHANUKA.COM/SAM/B7GQ9HPQH7PA?3'
-      // url: encodeURIComponent(url)
-      url: url
-      // url: decodeURIComponent(url)
-    }
-    this.mainService.getProductData(obj).subscribe(res => {
-      this.tableData = res['result'][0];
-      this.status = res['status']
-      localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
-    }, err => {
-      console.log(err);
-      this.showError = true;
-      // this.router.navigateByUrl('Error');
-    })
-
   }
 
 

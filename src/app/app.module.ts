@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainService } from './services/main.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './components/error/error.component';
+import { LocationDetailComponent } from './components/locationDetails/location-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ErrorComponent } from './components/error/error.component';
     ValidComponent,
     InvalidComponent,
     LocationDialogeComponent,
-    ErrorComponent
+    ErrorComponent,
+    LocationDetailComponent
   ],
   imports: [
     BrowserModule,

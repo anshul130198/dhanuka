@@ -1,3 +1,4 @@
+import { LocationDetailComponent } from './components/locationDetails/location-details.component';
 import { InvalidComponent } from './components/Invalid/invalid.component';
 import { ValidComponent } from './components/valid/valid.component';
 import { NgModule } from '@angular/core';
@@ -11,11 +12,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'valid',
+        redirectTo: 'location',
         pathMatch: 'full'
       },
       {
-        path: '',
+        path: 'location',
+        component: LocationDetailComponent
+      },
+      {
+        path: 'valid',
         component: ValidComponent
       },
       {
