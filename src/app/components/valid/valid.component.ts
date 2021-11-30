@@ -109,7 +109,7 @@ export class ValidComponent {
     this.mainService.getProductData(obj).subscribe(res => {
       this.tableData = res['result'][0];
       this.status = res['status']
-      localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
+      localStorage.setItem('auth_session', res['result'][0]['auth_session']);
     }, err => {
       console.log(err);
       this.showError = true;
