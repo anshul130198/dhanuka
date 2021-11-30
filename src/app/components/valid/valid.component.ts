@@ -81,7 +81,7 @@ export class ValidComponent {
       else if (this.showError) {
         this.router.navigateByUrl('Error');
       }
-      else if (this.tableData = []) {
+      else {
         this.router.navigateByUrl('QRCODE/invalid');
       }
     })
