@@ -27,7 +27,7 @@ export class LocationDetailComponent implements OnInit {
 
         this.form = this.formBuilder.group({
             name: ['', [Validators.required, Validators.maxLength(100)]],
-            mobile: ["", [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+            mobile: ["", [Validators.required, Validators.pattern("^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$")]],
             location: ["", Validators.maxLength(100)],
         })
     }
@@ -36,17 +36,16 @@ export class LocationDetailComponent implements OnInit {
 
     }
 
-    _keyUp(event: any) {
-        // console.log(event.key)
-        const pattern = /[0-9\+\-\ ]/;
-        let inputChar = String.fromCharCode(event.key);
-    
-        if (!pattern.test(inputChar)) {
-          // invalid character, prevent input
-          event.preventDefault();
-        }
+    validateNumber(event) {
+        const keyCode = event.keyCode;
 
-        this.Search.nativeElement.value = '';
+        const excludedKeys = [8, 37, 39, 46];
+
+        if (!((keyCode >= 48 && keyCode <= 57) ||
+            (keyCode >= 96 && keyCode <= 105) ||
+            (excludedKeys.includes(keyCode)))) {
+            event.preventDefault();
+        }
     }
 
     get f() {
