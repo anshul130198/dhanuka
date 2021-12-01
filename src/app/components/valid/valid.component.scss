@@ -367,8 +367,13 @@
     #mobileGrass{
         display: block;
         padding-bottom:0;
+        position: absolute;
     }
     #webgrass{
         display: none;
+    }
+
+    .endFooter{
+        top:auto;
     }
 }
