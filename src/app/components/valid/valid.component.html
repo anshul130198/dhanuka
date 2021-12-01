@@ -1,57 +1,101 @@
 <!-- <p>vaid component works!!!</p> -->
 <!-- allow="geolocation" -->
 <!-- src="https://dhanukasalesapp.in:8090/qrcode?url='https:dhanuka.com/SAM/<qrcode>'" -->
-<div class="valid-main">
-    <!-- *ngIf="showDataTable" -->
-    <div class="heading">
-        <div class="productImg">
-            <!-- <img src="../../../assets/icons/Poison.svg"> -->
-            <img class="product-url" src="{{tableData['product_picture']}}">
-            <img class="geniune" src="../../../assets/icons/geniune.svg">
+<div class="backdiv"><img class="backgroundImg" src="../../../assets/pack5/Web-BG.png"></div>
+<div class="Main">
+    <div class="main-container">
+        <div id="MobileHeader" class="TopHeader">
+            <div class='leftIcon'>
+                <img src="../../../assets/pack5/aazadi.png">
+            </div>
+            <div class='rightIcon'>
+                <img src="../../../assets/pack5/dhanuka logo.png">
+            </div>
         </div>
-        <div class="thanksmsg">Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}}.<br> QR Code
-            details:
+        <div class="valid-main">
+            <!-- *ngIf="showDataTable" -->
+            <div class="heading">
+                <div class="productImg">
+                    <!-- <img src="../../../assets/icons/Poison.svg"> -->
+                    <img class="product-url" src="{{tableData['product_picture']}}">
+                    <img class="geniune" src="../../../assets/icons/geniune.svg">
+                </div>
+                <div class="thanksmsg">Thank you for scanning GENIUNE DHANUKA {{tableData.packaging_level}}.<br> QR Code
+                    details:
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <!-- <ng-container *ngFor="let item of data | keyvalue: originalOrder"> -->
+                    <ng-container *ngFor="let item of data | keyvalue: originalOrder">
+                        <!-- tableData -->
+                        <tr
+                            *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' && item.key !='product_name'">
+                            <td class="right-border bottom-border">{{data[item.key]}}</td>
+                            <td class="bottom-border">{{tableData[item.key]}}</td>
+                        </tr>
+                        <tr *ngIf="item.key == 'product_name'">
+                            <td class="right-border bottom-border name">
+                                <!--<a href="{{tableData['product_url']}}" target="_blank">
+                                    <b>{{data[item.key]}}</b></a>-->
+                                    {{data[item.key]}}
+                            </td>
+                            <td class="bottom-border special_td" id="redirectLink">
+                            <a href="{{tableData['product_url']}}" target="_blank">{{tableData[item.key]}}</a>
+                                    <!-- <img src="../../../assets/icons/hand.gif"> -->
+                                
+                                <img src="../../../assets/icons/hand.gif">
+                            </td>
+                        </tr>
+                        <tr *ngIf="item.key == 'cautionary_symbol'">
+                            <td class="right-border bottom-border">{{data[item.key]}}</td>
+                            <!-- <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td> -->
+                            <td class="bottom-border" id="caution_td">
+                                <img src="{{tableData['cautionary_symbol_picture']}}">
+                                <!-- <img class="geniune" src="../../../assets/icons/geniune.svg"> -->
+                                <p>{{tableData[item.key]}}</p>
+                            </td>
+                        </tr>
+                        <tr
+                            *ngIf="item.key == 'label_information' || item.key == 'leaflet_information' || item.key == 'product_video' ">
+                            <td class="right-border bottom-border">{{data[item.key]}}</td>
+                            <td class="bottom-border" id="redirectLink"><a href="{{tableData[item.key]}}" target="_blank">Click
+                                    on the link to see</a></td>
+                        </tr>
+                    </ng-container>
+                </table>
+            </div>
+        </div>
+        <div class="RightSide">
+            <div class="container">
+                <div id="webHeading" class="TopHeader">
+                    <div class='leftIcon'>
+                        <img src="../../../assets/pack5/aazadi.png">
+                    </div>
+                    <div class='rightIcon'>
+                        <img src="../../../assets/pack5/dhanuka logo.png">
+                    </div>
+                </div>
+                <div class="middelHeading">
+                    <h1>PROVING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</h1>
+                </div>
+                <div class="MiddleMain">
+                    <img class="grass" src="../../../assets/pack5/anaag.png">
+                    <div class='Middle'>
+                        <div class="RightImg">
+                            <img class="kissan" src="../../../assets/pack5/kisaan.png">
+                            <img class="transform" src="../../../assets/pack5/transforming.png">
+                        </div>
+                            <div class="mobileHeading">
+                                <p>PROVING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-    <div class="table-container">
-        <table>
-            <!-- <ng-container *ngFor="let item of data | keyvalue: originalOrder"> -->
-            <ng-container *ngFor="let item of data | keyvalue: originalOrder">
-                <!-- tableData -->
-                <tr
-                    *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' && item.key !='product_name'">
-                    <td class="right-border bottom-border">{{data[item.key]}}</td>
-                    <td class="bottom-border">{{tableData[item.key]}}</td>
-                </tr>
-                <tr *ngIf="item.key == 'product_name'">
-                    <td class="right-border bottom-border name">
-                        <!--<a href="{{tableData['product_url']}}" target="_blank">
-                            <b>{{data[item.key]}}</b></a>-->
-                            {{data[item.key]}}
-                    </td>
-                    <td class="bottom-border special_td" id="redirectLink">
-                    <a href="{{tableData['product_url']}}" target="_blank">{{tableData[item.key]}}</a>
-                            <!-- <img src="../../../assets/icons/hand.gif"> -->
-                        
-                        <img src="../../../assets/icons/hand.gif">
-                    </td>
-                </tr>
-                <tr *ngIf="item.key == 'cautionary_symbol'">
-                    <td class="right-border bottom-border">{{data[item.key]}}</td>
-                    <!-- <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td> -->
-                    <td class="bottom-border" id="caution_td">
-                        <img src="{{tableData['cautionary_symbol_picture']}}">
-                        <!-- <img class="geniune" src="../../../assets/icons/geniune.svg"> -->
-                        <p>{{tableData[item.key]}}</p>
-                    </td>
-                </tr>
-                <tr
-                    *ngIf="item.key == 'label_information' || item.key == 'leaflet_information' || item.key == 'product_video' ">
-                    <td class="right-border bottom-border">{{data[item.key]}}</td>
-                    <td class="bottom-border" id="redirectLink"><a href="{{tableData[item.key]}}" target="_blank">Click
-                            on the link to see</a></td>
-                </tr>
-            </ng-container>
-        </table>
+    <div class="endFooter">
+        <img src="../../../assets/pack5/trust-of.png">
     </div>
 </div>
+

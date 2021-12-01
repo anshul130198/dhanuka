@@ -1,3 +1,6 @@
+.main-container{
+    display: flex;
+}
 .valid-main {
     width: 65%;
     margin-left: auto;
@@ -93,6 +96,15 @@
     }
 }
 
+.backgroundImg{
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
+
+
+
 @media only screen and ( max-width:640px) and (min-width:320px) {
     .valid-main{
         width: 90%;
@@ -105,5 +117,225 @@
                 padding-left: 10px;
             }
         }
+    }
+    .main-container{
+        flex-direction: column;
+    }
+}
+
+
+.TopHeader{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    width: 90%;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 0;
+}
+
+.leftIcon {
+    img{
+        padding: 25px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.middelHeading{
+    color: #00642e;
+    h1{
+        width: 90%;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
+
+}
+
+.MiddleMain{
+    position: relative;
+}
+
+.Middle{
+    display: flex;
+}
+
+.endFooter{
+    width: 100%;
+    z-index: 12;
+    img{
+        width: 100%;
+    }
+}
+.RightImg{
+    position:relative;
+    width: 60%;
+    img{
+        // margin-left: 10%;
+        width: auto;
+    }
+}
+.transform{
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    padding-left: 10%;
+}
+
+.grass{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.FormPopup{
+    width: 25%;
+    padding: 5%;
+    z-index: 11;
+}
+
+.form{
+    background: #03341e;
+    height: 100%;
+    padding: 10px;
+    color: white;
+}
+.fields{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    input{
+        background: #00642e 0% 0% no-repeat padding-box;
+        border: 0.5px solid #707070;
+        border-radius: 2px;
+        min-height: 35px;
+    }
+}
+.proceed-green{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    position: relative;
+    margin-top: 10%;
+    img{
+        height: 40px;
+        width: 60%;
+    }
+
+    p{
+        position: absolute;
+        top: 25%;
+        left: 32%;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+.kissan{
+    height: 47vh;
+}
+
+.mobileHeading{
+    display: none;
+}
+
+#MobileHeader{
+    display: none;
+}
+.RightSide{
+    width: 50%;
+}
+
+@media only screen and ( max-width:640px) and (min-width:320px) {
+    .main{
+        height: auto;
+    }
+    #webHeading{
+        display: none;
+    }
+    .leftIcon{
+        img{
+            width: 110px;
+            padding:10%;
+        }
+    }
+
+    .middelHeading{
+        display: none;
+    }
+
+    .rightIcon{
+        img{
+            width: 65px;
+        }
+    }
+
+    .Middle{
+        flex-direction: column-reverse;
+    }
+
+    .FormPopup{
+        width: auto;
+    }
+    .fields{
+        margin-bottom: 5px;
+        input{
+            min-height: 25px;
+        }
+    }
+    .proceed-green{
+        margin-top: 2%;
+        img{
+            height: 30px;
+            width: 50%;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+
+    .RightImg{
+        width: auto;
+        .transform{
+            position: absolute !important;
+        }
+        img{
+            width: -webkit-fill-available;
+            position: relative;
+            margin-left: 0;
+        }
+    }
+
+    .mobileHeading{
+        display: block;
+        p{
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;   
+            color: #00642e;     
+        }
+    }
+    #MobileHeader{
+        display: flex;
+    }
+    .backdiv{
+        position: fixed;
+        z-index: -1;
+        img{
+            position: initial;
+        }
+    }
+    .RightSide{
+        width: 95%;
+        margin:auto;
     }
 }

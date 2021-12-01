@@ -1,5 +1,5 @@
 .main{
-    background:url('../../../assets/pack5/Web-BG.png') ;
+    // background:url('../../../assets/pack5/Web-BG.png') ;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -7,7 +7,15 @@
     flex-direction: column;
     /* justify-content: space-evenly; */
     height: 100%;
+    .backgroundImg{
+        position: absolute;
+        z-index: -1;
+        height: 100vh;
+        width: 100%;
+    }
 }
+
+
 
 .container{
     display: flex;
@@ -57,6 +65,7 @@
 
 .endFooter{
     width: 100%;
+    z-index: 12;
     img{
         width: 100%;
     }
@@ -66,6 +75,7 @@
     width: 60%;
     img{
         margin-left: 10%;
+        width: 90%;
     }
 }
 .transform{
