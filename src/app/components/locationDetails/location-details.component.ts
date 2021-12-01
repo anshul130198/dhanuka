@@ -85,7 +85,7 @@ export class LocationDetailComponent implements OnInit {
         }
         let auth = localStorage.getItem('auth_session');
         this.mainService.sendLocationDetails(obj, auth).subscribe(res => {
-            this.router.navigateByUrl('/valid');
+            this.router.navigateByUrl('/QRCODE/valid');
         })
     }
 

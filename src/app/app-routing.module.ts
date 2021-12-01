@@ -10,13 +10,13 @@ const routes: Routes = [
   {
     path: 'QRCODE', component: LandingComponent,
     children: [
+      // {
+      //   path: '',
+      //   redirectTo: '',
+      //   pathMatch: 'full'
+      // },
       {
         path: '',
-        redirectTo: 'location',
-        pathMatch: 'full'
-      },
-      {
-        path: 'location',
         component: LocationDetailComponent
       },
       {
