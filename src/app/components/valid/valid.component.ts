@@ -49,20 +49,20 @@ export class ValidComponent {
   // }
 
   data = {
-    'mfg_by': 'Mfg.by',
-    'registration_no': 'Registration No.',
+    'product_name': 'Product name',
     'batch_no': 'Batch No.',
     'date_of_mfg': 'Date of Mfg.',
     'date_of_expiry': 'Exp Date',
-    'product_name': 'Product name',
-    'cautionary_symbol': 'Cautionary Symbol',
-    'customer_care_no': 'Customer Care No.',
-    'marketed_by': 'Marketed by',
     'uid': 'UID',
+    'product_video': 'Product video',
+    'mfg_by': 'Mfg.by',
+    'marketed_by': 'Marketed by',
+    'cautionary_symbol': 'Cautionary Symbol',
+    'registration_no': 'Registration No.',
+    'customer_care_no': 'Customer Care No.',
     'antidote_statement': 'Antidote Statement',
     'label_information': 'Label information',
     'leaflet_information': 'Leaflet information',
-    'product_video': 'Product video',
   }
 
   originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
