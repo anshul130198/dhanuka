@@ -1,3 +1,8 @@
+.Main{
+    background: url('../../../assets/pack5/Web-BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .main-container{
     display: flex;
 }
@@ -180,6 +185,10 @@
 .endFooter{
     width: 100%;
     z-index: 12;
+    position: absolute;
+    /* bottom: 0; */
+    /* margin-top: 10px; */
+    top: 90%;
     img{
         width: 100%;
     }
