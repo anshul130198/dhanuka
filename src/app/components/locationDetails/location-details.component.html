@@ -36,7 +36,7 @@
                     
                                 <div class="fields">
                                     <label>Mobile Number</label>
-                                    <input type="text" class="form-control" formControlName="mobile" id="mobile" />
+                                    <input #monile type="tel" class="form-control" formControlName="mobile" id="mobile" (keyup)="_keyUp($event)" />
                                     <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert">
                                         <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>
                                         <div *ngIf="f.mobile.errors.pattern">Please, Enter a valid 10 digit Mobile Number.</div>
