@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
@@ -14,6 +14,7 @@ export class LocationDetailComponent implements OnInit {
     lat: any;
     long: any;
     coordinates;
+    @ViewChild('mobile') Search: ElementRef;
 
     constructor(private formBuilder: FormBuilder,
         private mainService: MainService,
@@ -33,6 +34,19 @@ export class LocationDetailComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    _keyUp(event: any) {
+        // console.log(event.key)
+        const pattern = /[0-9\+\-\ ]/;
+        let inputChar = String.fromCharCode(event.key);
+    
+        if (!pattern.test(inputChar)) {
+          // invalid character, prevent input
+          event.preventDefault();
+        }
+
+        this.Search.nativeElement.value = '';
     }
 
     get f() {
