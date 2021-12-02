@@ -1,5 +1,6 @@
-<div class="main">
-    <img class="backgroundImg" src="../../../assets/pack5/Web-BG.png">
+<div class="main" style="background:url('../../../assets/pack5/Web-BG.png');background-repeat: no-repeat;
+background-size: cover;">
+    <!--<img class="backgroundImg" src="../../../assets/pack5/Web-BG.png">-->
     <div class="container">
         <div class="TopHeader">
             <div class='leftIcon'>
@@ -40,8 +41,8 @@
                                     <div class="fixed-text">
                                         <img src="../../../assets/icons/flag.png">
                                         <span>+91</span>
+                                        <input #mobile type="tel" class="form-control" formControlName="mobile" id="mobile" (keydown)="validateNumber($event)" />
                                     </div>
-                                    <input #mobile type="tel" class="form-control" formControlName="mobile" id="mobile" (keydown)="validateNumber($event)" />
                                     <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert">
                                         <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>
                                         <div *ngIf="f.mobile.errors.pattern">Please, Enter a valid 10 digit Mobile Number.</div>
