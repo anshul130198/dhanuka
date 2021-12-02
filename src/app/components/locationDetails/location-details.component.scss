@@ -50,6 +50,8 @@
         margin-right: auto;
         font-weight: bold;
         font-size: 35px;
+        font-family: 'Helvetica LT Std';
+        text-align: center;
     }
 
 }
@@ -105,17 +107,26 @@
     height: 100%;
     padding: 10px;
     color: white;
+    p{
+        font: normal normal bold 14px/26px  'Helvetica LT Std';
+        text-align: center;
+    }
 }
 .fields{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    label{
+        font: normal normal bold 15px/26px  'Helvetica LT Std';
+    }
     input{
         background: #00642e 0% 0% no-repeat padding-box;
         border: 0.5px solid #707070;
         border-radius: 2px;
         min-height: 35px;
         outline: 0;
+        color: white;
+        font: normal normal 15px/26px  'Helvetica LT Std';
         &:focus{
             outline: 0;
             background: #00642e 0% 0% no-repeat padding-box;
@@ -138,7 +149,7 @@
         position: absolute;
         top: 25%;
         left: 32%;
-        color: black;
+        color: #00642e;
         font-size: 18px;
         font-weight: bold;
     }
@@ -171,11 +182,11 @@
     .main{
         height: auto;
     }
-    #input-wrapper{
-        .fixed-text{
-            top:30px;
-        }
-    }
+    // #input-wrapper{
+    //     .fixed-text{
+    //         // top:30px;
+    //     }
+    // }
 
     .leftIcon{
         img{
@@ -249,8 +260,38 @@ input:-webkit-autofill , input:-webkit-autofill:focus{
     -webkit-text-fill-color: rgb(255, 255, 255);
 }
 
-@media only screen and ( min-height:800px) {
+@media only screen and ( min-height:768px) {
     .main{
         height: 100vh;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+.form{
+    p{
+        font: normal normal bold 16px/26px  'Helvetica LT Std';
+        left: 35%;
+    }
+}
+.fields{
+    margin-bottom: 25px;
+        label{
+            font: normal normal bold 15px/26px  'Helvetica LT Std';
+        }
+        input{
+            min-height: 45px;
+            font: normal normal bold 15px/26px  'Helvetica LT Std';
+            }
+    }
+}
+
+
+@media screen and (min-device-width:600px) and (max-device-width:1024px) {
+    .proceed-green{
+        p{
+            font-size: 16px;
+            left:30%;
+
+        }
     }
 }

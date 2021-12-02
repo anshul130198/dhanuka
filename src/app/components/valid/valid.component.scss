@@ -40,7 +40,7 @@
             }
         }
         .thanksmsg{
-            font: normal normal bold 30px/41px  Helvetica LT Std;
+            font: normal normal bold 30px/41px  'Helvetica LT Std';
             color: #00642e;
             display: flex;
             padding-left: 10px;
@@ -56,38 +56,38 @@
         }
     }
     .table-container {
-        table {
-            width: 100%;
-            // border-right: 2px solid #AFD4A6;
-            // border-top: 2px solid #AFD4A6;
-            // border-left: 2px solid #AFD4A6;
-            border: 2px black solid;
-            border-spacing: 0;
+        table{
+                width: 100%;
+                // border-right: 2px solid #AFD4A6;
+                // border-top: 2px solid #AFD4A6;
+                // border-left: 2px solid #AFD4A6;
+                border: 2px black solid;
+                border-spacing: 0;
 
-            .special_td{
-                display: flex;
-                align-items: center;
-            }
+                .special_td{
+                    display: flex;
+                    align-items: center;
+                }
 
-            .name {
-                a {
-                    color: black;
+                .name {
+                    a {
+                        color: black;
+                    }
+                }
+
+                .right-border {
+                    border-right: 2px solid #000000;
+                }
+                .bottom-border {
+                    // border-bottom: 2px solid #86d173;
+                    border: 2px solid black solid;
+                    font: normal normal bold 15px/26px Helvetica LT Std;
+                    /* letter-spacing: 0px; */
+                    color: #00642e;
+                    padding-left: 10px;
+                    border-bottom: 2px solid #000000;           
                 }
             }
-
-            .right-border {
-                border-right: 2px solid #000000;
-            }
-            .bottom-border {
-                // border-bottom: 2px solid #86d173;
-                border: 2px solid black solid;
-                font: normal normal bold 15px/26px Helvetica LT Std;
-                /* letter-spacing: 0px; */
-                color: #00642e;
-                padding-left: 10px;
-                border-bottom: 2px solid #000000;           
-            }
-        }
 
         // table tr:nth-child(even){
         //     background: #e9efe8 0% 0% no-repeat padding-box;
@@ -95,10 +95,10 @@
         // table tr:nth-child(odd){
         //     background: #d7e1cf 0% 0% no-repeat padding-box;
         // }
-        table tr {
-            background: rgb(248 248 248 / 60%);
+            table tr {
+                background: rgb(248 248 248 / 60%);
+            }
         }
-    }
     #caution_td{
         display:flex;
         min-height: 52px;
@@ -180,7 +180,8 @@
         font-size: 35px;
         text-align: center;
         line-height: 45px;
-        font-family: 'Helvetica LT Std bold';
+        // font-family: 'Helvetica LT Std Black Condensed';
+        font: normal normal bold 14px/19px 'Helvetica LT Std Extra Condensed';
     }
 
 }
@@ -412,3 +413,12 @@
     }
 }
 
+@media screen and (min-device-width:600px) and (max-device-width:1024px) {
+    .proceed-green{
+        p{
+            font-size: 16px;
+            left:30%;
+
+        }
+    }
+}
