@@ -23,10 +23,15 @@
 
 
         .productImg{
-            min-width: 100px;
-            min-height: 100px;
+            width: 120px;
+            height: 140px;
+            min-width: 120px;
+            max-height: 140px;
             background-repeat: no-repeat;
-            max-height: 124px;
+            /* max-height: 124px; */
+            position: relative;
+            overflow: hidden;
+            background: #f7f7f7;
 
             .product-url {
                 max-height: 124px;
@@ -43,13 +48,10 @@
             width: auto;
         }
         .geniune{
-            width: 50%;
-            margin-left: auto;
-            margin-top: auto;
-            display: flex;
-            // margin-top: 50%;      
-            position: relative;
-            bottom: 40%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            width: 160%;
+            top: -29px;
+            position: absolute;
+            left: -57px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
         }
     }
     .table-container {

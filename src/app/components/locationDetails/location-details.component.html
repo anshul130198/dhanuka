@@ -28,7 +28,7 @@ background-size: cover;">
                                 <!-- (ngSubmit)="submit()" -->
                     
                                 <div class="fields">
-                                    <label>Name</label>
+                                    <label>*Name</label>
                                     <input type="text" class="form-control" formControlName="name" id="name" max="100" />
                                     <div *ngIf="f.name.touched && f.name.invalid" class="alert">
                                         <div *ngIf="f.name.errors.required">Name is required.</div>
@@ -37,7 +37,7 @@ background-size: cover;">
                                 </div>
                     
                                 <div id="input-wrapper" class="fields">
-                                    <label>Mobile Number</label>
+                                    <label>*Mobile Number</label>
                                     <div class="fixed-text">
                                         <img src="../../../assets/icons/flag.png">
                                         <span>+91</span>
@@ -50,7 +50,7 @@ background-size: cover;">
                                 </div>
                     
                                 <div class="fields">
-                                    <label>Location</label>
+                                    <label>*Location</label>
                                     <input type="text" class="form-control" formControlName="location" id="location" max="100" />
                                     <div *ngIf="f.location.touched && f.location.invalid" class="alert">
                                         <div *ngIf="f.location.errors.maxLength">Location should not exceed 100 characters.</div>

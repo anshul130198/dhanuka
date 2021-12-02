@@ -1,7 +1,6 @@
 .main{
     // background:url('../../../assets/pack5/Web-BG.png') ;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -68,6 +67,7 @@
     z-index: 12;
     img{
         width: 100%;
+        display: block;
     }
 }
 .RightImg{
@@ -247,4 +247,10 @@
 input:-webkit-autofill , input:-webkit-autofill:focus{
     -webkit-box-shadow:0 0 0 50px #00642e inset !important;
     -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
+@media only screen and ( min-height:800px) {
+    .main{
+        height: 100vh;
+    }
 }
