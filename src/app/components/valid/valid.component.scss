@@ -181,7 +181,7 @@
         text-align: center;
         line-height: 45px;
         // font-family: 'Helvetica LT Std Black Condensed';
-        font: normal normal bold 14px/19px 'Helvetica LT Std Extra Condensed';
+        font: normal normal 900 34px/41px 'Helvetica LT Std';
     }
 
 }
@@ -410,15 +410,5 @@
 
     .endFooter{
         margin-top: auto;
-    }
-}
-
-@media screen and (min-device-width:600px) and (max-device-width:1024px) {
-    .proceed-green{
-        p{
-            font-size: 16px;
-            left:30%;
-
-        }
     }
 }
