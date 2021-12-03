@@ -302,3 +302,44 @@ input:-webkit-autofill , input:-webkit-autofill:focus{
         color: red;
     }
 }
+
+@media only screen 
+and (min-device-height: 320px) 
+and (max-device-height: 480px)
+ {
+    .proceed-green{
+        p{
+            // left:40%;
+            font-size: 10px;
+        }
+    }
+    .TopHeader{
+        width: 100%;
+    }
+
+    .leftIcon{
+        // width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    
+    .rightIcon{
+        width: 20%;
+        img{
+            width: auto;
+        }
+    }
+    
+    .middelHeading{
+        h1{
+            font-size: 20px;
+        }
+    }
+    
+    .RightImg{
+        .kissan{
+            min-height: 100%;
+        }
+    }
+}
