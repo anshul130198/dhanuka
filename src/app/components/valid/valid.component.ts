@@ -4,6 +4,7 @@ import { Component} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { KeyValue } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer , SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-valid',
@@ -17,12 +18,17 @@ export class ValidComponent {
   tableData: any;
   status: boolean = false;
   showError: boolean = false;
+  image:any;
 
   constructor(private mainService: MainService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    public _DomSanitizationService: DomSanitizer) {
       this.tableData = JSON.parse(localStorage.getItem('tableData'));
       this.status = localStorage.getItem('status') === 'true'? true: false;
+      // debugger
+      this.image=_DomSanitizationService.bypassSecurityTrustUrl(this.tableData['cautionary_symbol_picture']);
+      console.log(this.image.changingThisBreaksApplicationSecurity)
       // localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
 
 
@@ -63,6 +69,10 @@ export class ValidComponent {
     'antidote_statement': 'Antidote Statement',
     'label_information': 'Label information',
     'leaflet_information': 'Leaflet information',
+  }
+
+  photoURL(img) {
+    return this._DomSanitizationService.bypassSecurityTrustUrl(img);
   }
 
   originalOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {
