@@ -228,6 +228,7 @@
         }
         p{
             font-size: 14px;
+            top:15%;
         }
     }
 
@@ -293,5 +294,11 @@ input:-webkit-autofill , input:-webkit-autofill:focus{
             left:30%;
 
         }
+    }
+}
+
+.alert{
+    div{
+        color: red;
     }
 }
