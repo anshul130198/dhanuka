@@ -15,6 +15,8 @@ export class LocationDetailComponent implements OnInit {
     long: any;
     coordinates;
     @ViewChild('mobile') Search: ElementRef;
+    showError: boolean = false;
+    status: boolean = false;
 
     constructor(private formBuilder: FormBuilder,
         private mainService: MainService,
@@ -79,9 +81,11 @@ export class LocationDetailComponent implements OnInit {
             localStorage.setItem('tableData', JSON.stringify(res['result'][0]));
             localStorage.setItem('status', res['status']);
             localStorage.setItem('auth_session', res['result'][0]['auth_session']);
+            this.status = res['status'];
         }, err => {
             console.log(err);
             localStorage.setItem('showError', 'true');
+            this.showError = true
             // this.router.navigateByUrl('Error');
         })
 
@@ -98,8 +102,16 @@ export class LocationDetailComponent implements OnInit {
         }
         let auth = localStorage.getItem('auth_session');
         this.mainService.sendLocationDetails(obj, auth).subscribe(res => {
-            this.router.navigateByUrl('/QRCODE/valid');
+            console.log(res);  
         })
+
+        if(this.showError) {
+            this.router.navigateByUrl('/Error');
+        } else if(!this.status) {
+            this.router.navigateByUrl('/QRCODE/invalid');
+        } else {
+            this.router.navigateByUrl('/QRCODE/valid');
+        }
     }
 
 
