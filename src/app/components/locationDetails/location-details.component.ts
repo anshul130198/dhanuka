@@ -17,6 +17,7 @@ export class LocationDetailComponent implements OnInit {
     @ViewChild('mobile') Search: ElementRef;
     showError: boolean = false;
     status: boolean = false;
+    numberCheck = ['0','1','2','3','4'];
 
     constructor(private formBuilder: FormBuilder,
         private mainService: MainService,
@@ -29,7 +30,7 @@ export class LocationDetailComponent implements OnInit {
 
         this.form = this.formBuilder.group({
             name: ['', [Validators.required, Validators.maxLength(100)]],
-            mobile: ["", [Validators.required, Validators.pattern("^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$")]],
+            mobile: ["", [Validators.required, Validators.pattern("([5-9][0-9]{9})$")]],
             location: ["", Validators.maxLength(100)],
         })
     }
@@ -39,6 +40,11 @@ export class LocationDetailComponent implements OnInit {
     }
 
     validateNumber(event) {
+        // console.log(this.form.controls);
+        console.log(this.form.controls['mobile'].value[0])
+        if (this.form.controls['mobile'].value && this.numberCheck.includes(this.form.controls['mobile'].value[0]) ) {
+            this.form.controls['mobile'].markAsTouched()
+        }
         const keyCode = event.keyCode;
 
         const excludedKeys = [8, 37, 39, 46];
@@ -102,12 +108,12 @@ export class LocationDetailComponent implements OnInit {
         }
         let auth = localStorage.getItem('auth_session');
         this.mainService.sendLocationDetails(obj, auth).subscribe(res => {
-            console.log(res);  
+            console.log(res);
         })
 
-        if(this.showError) {
+        if (this.showError) {
             this.router.navigateByUrl('/Error');
-        } else if(!this.status) {
+        } else if (!this.status) {
             this.router.navigateByUrl('/QRCODE/invalid');
         } else {
             this.router.navigateByUrl('/QRCODE/valid');
