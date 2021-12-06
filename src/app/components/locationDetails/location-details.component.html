@@ -7,7 +7,7 @@ background-size: cover;">
                 <img src="../../../assets/pack5/aazadi.png">
             </div>
             <div class="middelHeading">
-                <h1>PROVING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</h1>
+                <h1>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</h1>
             </div>
             <div class='rightIcon'>
                 <img src="../../../assets/pack5/dhanuka logo.png">
@@ -22,7 +22,7 @@ background-size: cover;">
                 </div>
                 <div class="FormPopup">
                     <div class="form">
-                        <p>Please provide your details to see QR code details.</p>
+                        <p>Please provide your details to view code verification result and stay connected with Dhanuka.</p>
                         <div class="container">
                             <form [formGroup]="form">
                                 <!-- (ngSubmit)="submit()" -->
@@ -41,7 +41,7 @@ background-size: cover;">
                                     <div class="fixed-text">
                                         <img src="../../../assets/icons/flag.png">
                                         <span>+91</span>
-                                        <input #mobile type="tel" class="form-control" formControlName="mobile" id="mobile" (keyup)="validateNumber($event)" />
+                                        <input #mobile type="tel" placeholder="9 9 9 9 9 9 9 9 9" class="form-control" formControlName="mobile" id="mobile" (keyup)="validateNumber($event)" />
                                     </div>
                                     <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert">
                                         <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>
@@ -59,13 +59,15 @@ background-size: cover;">
                     
                                 <div class="dialoge-button">
                                     <!--<button (click)="onClose()">Cancel</button>-->
-                                    <button (click)="submit()" [class.disable]="!form.valid" [disabled]="!form.valid" class="proceed-green"><img src="./../../../assets/pack1/view-result.png"><p>VIEW RESULTS</p></button>
+                                    <button (click)="submit()" [class.disable]="!form.valid" [disabled]="!form.valid" class="proceed-green">
+                                       <!--<img src="./../../../assets/pack1/view-result.png">-->
+                                        <span>VIEW RESULT</span></button>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="mobileHeading">
-                        <p>PROVING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
+                        <p>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
                     </div>
                 </div>
             </div>

@@ -39,8 +39,8 @@ export class ValidComponent {
 
   // data = {
   //   'Mfg.by': 'Dhanuka Agritech Ltd',
-  //   'Registration No.': 'test',
-  //   'Batch No.': 'jvhbn',
+  //   'Registration Number': 'test',
+  //   'Batch Number': 'jvhbn',
   //   'Exp Date': '8564789',
   //   'Cautionary Symbol':
   //   {
@@ -48,7 +48,7 @@ export class ValidComponent {
   //     imgurl: '../../../assets/icons/Poison.svg'
   //   },
   //   'Antidote Statement': 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
-  //   'Customer Care No.': '1800-102-1022',
+  //   'Customer Care Number': '1800-102-1022',
   //   'Label information': '#1',
   //   'Leaflet information': '#2',
   //   'Product video': '#3',
@@ -56,7 +56,7 @@ export class ValidComponent {
 
   data = {
     'product_name': 'Product name',
-    'batch_no': 'Batch No.',
+    'batch_no': 'Batch Number',
     'date_of_mfg': 'Date of Mfg.',
     'date_of_expiry': 'Exp Date',
     'uid': 'UID',
@@ -64,8 +64,8 @@ export class ValidComponent {
     'mfg_by': 'Mfg.by',
     'marketed_by': 'Marketed by',
     'cautionary_symbol': 'Cautionary Symbol',
-    'registration_no': 'Registration No.',
-    'customer_care_no': 'Customer Care No.',
+    'registration_no': 'Registration Number',
+    'customer_care_no': 'Customer Care Number',
     'antidote_statement': 'Antidote Statement',
     'label_information': 'Label information',
     'leaflet_information': 'Leaflet information',

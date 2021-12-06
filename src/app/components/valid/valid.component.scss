@@ -17,6 +17,15 @@
         z-index: 13;
         position: relative;
         margin-bottom: 60px;
+        .disclaimer{
+            margin-top: 2%;
+            margin-bottom: 2%;
+            color: #00642e;
+            font: normal normal bold 15px/26px Helvetica LT Std;
+            span{
+                color: red;
+            }
+        }
     }
     .heading{
         display: flex;
@@ -24,18 +33,18 @@
 
 
         .productImg{
-            width: 120px;
-            height: 140px;
-            min-width: 120px;
-            max-height: 140px;
+            width: auto;
+            /* height: 140px; */
+            /* min-width: 120px; */
+            /* max-height: 140px; */
             background-repeat: no-repeat;
-            /* max-height: 124px; */
             position: relative;
-            overflow: hidden;
-            background: #f7f7f7;
+            /* overflow: hidden; */
+            background: transparent;
+            margin-top: auto;
 
             .product-url {
-                max-height: 124px;
+                max-height: 200px;
                 min-height: 100px;
             }
         }
@@ -44,15 +53,19 @@
             color: #00642e;
             display: flex;
             padding-left: 10px;
+            flex-direction: column;
+            div{
+                margin-top: 5%;
+            }
         }
         .product{
             width: auto;
         }
         .geniune{
-            width: 160%;
-            top: -29px;
+            width: 170%;
+            top: -32px;
             position: absolute;
-            left: -57px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            left: -74px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         }
     }
     .table-container {
@@ -63,6 +76,7 @@
                 // border-left: 2px solid #AFD4A6;
                 border: 2px black solid;
                 border-spacing: 0;
+                border-bottom: 0;
 
                 .special_td{
                     display: flex;
@@ -126,6 +140,7 @@
 }
 
 
+
 @media only screen and ( max-width:640px) and (min-width:320px) {
     .valid-main{
         width: 90%;
@@ -136,6 +151,17 @@
                 margin-top: auto;
                 margin-bottom: auto;
                 padding-left: 10px;
+                line-height: 100%;
+            }
+        }
+
+        .table-container{
+            table{
+                border: 0px solid;
+                .bottom-border{
+                    border: 1px solid black; 
+                    border-right: 0.5px black solid;
+                }
             }
         }
     }
@@ -165,12 +191,14 @@
         padding: 25px;
         padding-left: 0;
         padding-right: 0;
-        width: 70%;
+        width: 80%;
+
     }
 }
 
 .middelHeading{
     color: #00642e;
+    height: 100%;
     h1{
         width: 90%;
         margin-top: 5%;
@@ -181,7 +209,7 @@
         text-align: center;
         line-height: 45px;
         // font-family: 'Helvetica LT Std Black Condensed';
-        font: normal normal 900 34px/41px 'Helvetica LT Std';
+        font-family: Helvetica LT Std bold;
     }
 
 }
@@ -223,7 +251,7 @@
 }
 .transform{
     left: 0;
-    bottom: 0;
+    bottom: -50px;
     position: absolute;
     z-index: 21;
     // padding-left: 10%;
@@ -300,7 +328,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
+        // height: 100%;
     }
 }
 
@@ -318,7 +346,7 @@
     }
     .leftIcon{
         img{
-            width: 110px;
+            width: 120px;
             padding:10%;
         }
     }
@@ -365,6 +393,7 @@
         width: -webkit-fill-available;
         .transform{
             position: absolute !important;
+            bottom: 0;
         }
         img{
             width: -webkit-fill-available;
@@ -377,7 +406,7 @@
         display: block;
         margin: auto;
         p{
-            font: normal normal 900 24px/41px "Helvetica LT Std";
+            font: normal normal 900 24px/41px Helvetica LT Std bold;
             text-align: center;
             margin-top: 10px;
             font-weight: bold;   
@@ -414,3 +443,15 @@
 }
 
 
+@media only screen 
+and (min-device-height: 320px) 
+and (max-device-height: 480px)
+ {
+     .thanksmsg{
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+     }
+     .kissan{
+        height: 100vh;
+     } 
+}
