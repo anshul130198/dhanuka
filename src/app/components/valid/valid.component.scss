@@ -21,7 +21,7 @@
             margin-top: 2%;
             margin-bottom: 2%;
             color: #00642e;
-            font: normal normal bold 15px/26px Helvetica LT Std;
+            font: normal normal bold 15px/20px Helvetica LT Std;
             span{
                 color: red;
             }
@@ -95,7 +95,7 @@
                 .bottom-border {
                     // border-bottom: 2px solid #86d173;
                     border: 2px solid black solid;
-                    font: normal normal bold 15px/26px Helvetica LT Std;
+                    font: normal normal bold 15px/20px Helvetica LT Std;
                     /* letter-spacing: 0px; */
                     color: #00642e;
                     padding-left: 10px;
@@ -119,13 +119,13 @@
         p{
             margin-top: auto;
             margin-bottom: auto;
-            font: normal normal bold 15px/26px Roboto;
+            font: normal normal bold 15px/20px Roboto;
         }
     }
     #redirectLink{
         a{
             text-decoration: none;
-                font: normal normal bold 15px/26px Roboto;
+                font: normal normal bold 15px/20px Roboto;
                 color: #0044FF;
                 cursor: pointer;
         }

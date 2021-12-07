@@ -41,7 +41,7 @@ background-size: cover;">
                                     <div class="fixed-text">
                                         <img src="../../../assets/icons/flag.png">
                                         <span>+91</span>
-                                        <input #mobile type="tel" placeholder="9 9 9 9 9 9 9 9 9" class="form-control" formControlName="mobile" id="mobile" (keyup)="validateNumber($event)" />
+                                        <input #mobile id="mobile" type="tel"  maxlength="10" placeholder="9999999999" class="form-control" value="" formControlName="mobile" (keyup)="validateNumber($event)" />
                                     </div>
                                     <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert">
                                         <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>

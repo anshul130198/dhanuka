@@ -130,6 +130,8 @@
         color: white;
         font: normal normal bold 15px/26px  'Helvetica LT Std';
         letter-spacing: 1.05px; 
+        border-color: white;
+        padding-left: 5px;
         &:focus{
             outline: 0;
             background: #00642e 0% 0% no-repeat padding-box;
@@ -179,12 +181,18 @@
         border-radius: 2px;
         display: flex;
         align-items: center;
+        border-color: white;
+        padding-left: 5px;
+        min-height: 45px;
         
         input{
             border: 0;
-            background: transparent;
+            // background: transparent;
             width: 100%;
-            outline:none
+            outline:none;
+            // padding-left: 10px;
+            margin-left: 14px;
+            // letter-spacing: 1.2ch;
         }
         span{
             font: normal normal bold 15px/26px  'Helvetica LT Std';
@@ -272,9 +280,11 @@
 }
 
 input:-webkit-autofill , input:-webkit-autofill:focus{
+    transition: background-color repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 2.2ch) 0 100%/22ch 2px no-repeat !important;
     -webkit-box-shadow:0 0 0 50px #00642e inset !important;
     -webkit-text-fill-color: rgb(255, 255, 255);
 }
+
 
 @media only screen and ( min-height:768px) {
     .main{
@@ -298,6 +308,9 @@ input:-webkit-autofill , input:-webkit-autofill:focus{
             min-height: 45px;
             font: normal normal bold 15px/26px  'Helvetica LT Std';
             }
+        #mobile{
+            min-height: 0 !important;
+        }
     }
 .proceed-green{
     min-height: 45px;
@@ -361,3 +374,29 @@ and (max-device-height: 480px)
         }
     }
 }
+
+#mobile::-webkit-input-placeholder{
+    letter-spacing: 1.2ch;
+
+}
+
+#mobile {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    width: 10.5ch;
+    background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 2.2ch) 0 100%/22ch 2px no-repeat;
+    letter-spacing: 1.2ch;
+    &:focus{
+        color: white;
+        // letter-spacing: 0.5ch;
+        background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 2.2ch) 0 100%/22ch 2px no-repeat;
+      }
+  }
+  #mobile:focus {
+    outline: none;
+    color: white;
+  }
+
+  
+
