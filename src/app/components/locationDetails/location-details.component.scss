@@ -183,7 +183,7 @@
         align-items: center;
         border-color: white;
         padding-left: 5px;
-        min-height: 45px;
+        min-height: 35px;
         
         input{
             border: 0;
@@ -240,7 +240,7 @@
         margin-bottom: 5px;
         position: relative;
         input{
-            min-height: 25px;
+            min-height: 35px;
         }
     }
     .proceed-green{
@@ -314,7 +314,10 @@ input:-webkit-autofill , input:-webkit-autofill:focus{
     }
 .proceed-green{
     min-height: 45px;
-}
+    }
+.fixed-text{
+        min-height: 45px !important;
+    }
 }
 
 
@@ -387,6 +390,8 @@ and (max-device-height: 480px)
     width: 10.5ch;
     background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 2.2ch) 0 100%/22ch 2px no-repeat;
     letter-spacing: 1.2ch;
+    min-height: auto;
+    overflow: auto;
     &:focus{
         color: white;
         // letter-spacing: 0.5ch;
