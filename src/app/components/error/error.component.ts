@@ -9,10 +9,12 @@ export class ErrorComponent implements OnDestroy {
 
   number: any;
   mail: any;
+  whatsapp: any;
 
   constructor() {
-    this.number = localStorage.getItem('number');
-    this.mail = localStorage.getItem('email');
+    this.number = localStorage.getItem('web_auth_customer_contact');
+    this.whatsapp = localStorage.getItem('web_auth_whats_app_no');
+    this.mail = localStorage.getItem('web_auth_email');
   }
 
   ngOnDestroy() {

@@ -71,8 +71,10 @@ export class LocationDetailComponent implements OnInit {
     getEmailAndNumber() {
         this.mainService.getNumber().subscribe(res => {
             console.log(res['result']);
-            localStorage.setItem('email', res['result'][1].value)
-            localStorage.setItem('number', res['result'][0].value)
+            res['result'].map(item => {
+                localStorage.setItem(item.name, item.value)
+            })
+            // localStorage.setItem('number', res['result'][0].value)
         })
     }
 

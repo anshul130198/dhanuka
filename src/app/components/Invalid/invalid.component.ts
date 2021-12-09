@@ -8,11 +8,13 @@ import { Component, OnDestroy } from '@angular/core';
 export class InvalidComponent implements OnDestroy {
 
   number: any;
+  whatsapp: any;
   mail: any;
 
   constructor() {
-    this.number = localStorage.getItem('number');
-    this.mail = localStorage.getItem('email');
+    this.number = localStorage.getItem('web_auth_customer_contact');
+    this.whatsapp = localStorage.getItem('web_auth_whats_app_no');
+    this.mail = localStorage.getItem('web_auth_email');
   }
 
   ngOnDestroy() {
