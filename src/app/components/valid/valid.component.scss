@@ -29,7 +29,7 @@
     }
     .heading{
         display: flex;
-        margin-bottom: 10px;
+        margin-bottom: 10%;
 
 
         .productImg{
@@ -65,7 +65,9 @@
             width: 170%;
             top: -32px;
             position: absolute;
-            left: -74px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            left: -74px;   
+            max-height: 300px;
+            max-width: 300px                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
         }
     }
     .table-container {
