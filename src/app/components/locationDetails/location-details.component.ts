@@ -14,19 +14,21 @@ export class LocationDetailComponent implements OnInit {
     lat: any;
     long: any;
     coordinates;
+    title_text: any;
+    background_image: any;
+    caption_image: any;
+    caption_logo: any;
+    showData: boolean = false;
     @ViewChild('mobile') Search: ElementRef;
     showError: boolean = false;
     status: boolean = false;
-    numberCheck = ['0','1','2','3','4'];
+    numberCheck = ['0', '1', '2', '3', '4'];
 
     constructor(private formBuilder: FormBuilder,
         private mainService: MainService,
         private route: ActivatedRoute,
         private router: Router) {
-
-        this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
-        this.getEmailAndNumber();
-        this.coordinates = this.askForLocation();
+        console.log('working!!!')
 
         this.form = this.formBuilder.group({
             name: ['', [Validators.required, Validators.maxLength(100)]],
@@ -36,13 +38,16 @@ export class LocationDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        console.log('ngoninit')
+        this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
+        this.getEmailAndNumber();
+        this.coordinates = this.askForLocation();
     }
 
     validateNumber(event) {
         // console.log(this.form.controls);
         console.log(this.form.controls['mobile'].value[0])
-        if (this.form.controls['mobile'].value && this.numberCheck.includes(this.form.controls['mobile'].value[0]) ) {
+        if (this.form.controls['mobile'].value && this.numberCheck.includes(this.form.controls['mobile'].value[0])) {
             this.form.controls['mobile'].markAsTouched()
         }
         const keyCode = event.keyCode;
@@ -90,6 +95,11 @@ export class LocationDetailComponent implements OnInit {
             localStorage.setItem('status', res['status']);
             localStorage.setItem('auth_session', res['result'][0]['auth_session']);
             this.status = res['status'];
+            this.title_text = res['result'][0]['title_text'] ? res['result'][0]['title_text'] : 'PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES';
+            this.background_image = res['result'][0]['background_image'] ? res['result'][0]['background_image'] : '../../../assets/pack5/kisaan.png';
+            this.caption_image = res['result'][0]['caption_image'] ? res['result'][0]['caption_image'] : '../../../assets/pack5/transforming.png';
+            this.caption_logo = res['result'][0]['caption_logo'] ? res['result'][0]['caption_logo'] : '../../../assets/pack5/aazadi.png';
+            this.showData = true;
         }, err => {
             console.log(err);
             localStorage.setItem('showError', 'true');

@@ -1,13 +1,13 @@
-<div class="main" style="background:url('../../../assets/pack5/Web-BG.png');background-repeat: no-repeat;
+<div class="main" *ngIf="showData" style="background:url('../../../assets/pack5/Web-BG.png');background-repeat: no-repeat;
 background-size: cover;">
     <!--<img class="backgroundImg" src="../../../assets/pack5/Web-BG.png">-->
     <div class="container">
         <div class="TopHeader">
             <div class='leftIcon'>
-                <img src="../../../assets/pack5/aazadi.png">
+                <img [src]="caption_logo">
             </div>
             <div class="middelHeading">
-                <h1>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</h1>
+                <h1>{{title_text}}</h1>
             </div>
             <div class='rightIcon'>
                 <img src="../../../assets/pack5/dhanuka logo.png">
@@ -17,8 +17,8 @@ background-size: cover;">
             <img class="grass" src="../../../assets/pack5/anaag.png">
             <div class='Middle'>
                 <div class="RightImg">
-                    <img class="kissan" src="../../../assets/pack5/kisaan.png">
-                    <img class="transform" src="../../../assets/pack5/transforming.png">
+                    <img class="kissan" [src]="background_image">
+                    <img class="transform" [src]="caption_image">
                 </div>
                 <div class="FormPopup">
                     <div class="form">
@@ -67,7 +67,7 @@ background-size: cover;">
                         </div>
                     </div>
                     <div class="mobileHeading">
-                        <p>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
+                        <p>{{title_text}}</p>
                     </div>
                 </div>
             </div>

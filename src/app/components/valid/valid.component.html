@@ -74,24 +74,24 @@
             <div class="container">
                 <div id="webHeading" class="TopHeader">
                     <div class='leftIcon'>
-                        <img src="../../../assets/pack5/aazadi.png">
+                        <img [src]="caption_logo">
                     </div>
                     <div class='rightIcon'>
                         <img src="../../../assets/pack5/dhanuka logo.png">
                     </div>
                 </div>
                 <div class="middelHeading">
-                    <h1>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</h1>
+                    <h1>{{title_text}}</h1>
                 </div>
                 <div class="MiddleMain">
                     <img id="mobileGrass" class="grass" src="../../../assets/pack5/anaag.png">
                     <div class='Middle'>
                         <div class="RightImg">
-                            <img class="kissan" src="../../../assets/pack5/kisaan.png">
-                            <img class="transform" src="../../../assets/pack5/transforming.png">
+                            <img class="kissan" [src]="background_image">
+                            <img class="transform" [src]="caption_image">
                         </div>
                             <div class="mobileHeading">
-                                <p>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
+                                <p>{{title_text}}</p>
                             </div>
                         </div>
                     </div>

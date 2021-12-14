@@ -1,10 +1,10 @@
 import { MainService } from './../../services/main.service';
 import { LocationDialogeComponent } from './../dialog/location/location.component';
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { KeyValue } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DomSanitizer , SafeUrl} from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-valid',
@@ -18,18 +18,27 @@ export class ValidComponent {
   tableData: any;
   status: boolean = false;
   showError: boolean = false;
-  image:any;
+  image: any;
+  title_text: any;
+  background_image: any;
+  caption_image: any;
+  caption_logo: any;
 
   constructor(private mainService: MainService,
     private router: Router,
     private route: ActivatedRoute,
     public _DomSanitizationService: DomSanitizer) {
-      this.tableData = JSON.parse(localStorage.getItem('tableData'));
-      this.status = localStorage.getItem('status') === 'true'? true: false;
-      // debugger
-      this.image=_DomSanitizationService.bypassSecurityTrustUrl(this.tableData['cautionary_symbol_picture']);
-      console.log(this.image.changingThisBreaksApplicationSecurity)
-      // localStorage.setItem('auth_session', res['result'].length > 0 ? res['result'][0]['auth_session'] : '');
+    this.tableData = JSON.parse(localStorage.getItem('tableData'));
+    this.status = localStorage.getItem('status') === 'true' ? true : false;
+    // debugger
+    this.title_text = this.tableData['title_text'] ? this.tableData['title_text'] : 'PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES';
+    this.background_image = this.tableData['background_image'] ? this.tableData['background_image'] : '../../../assets/pack5/kisaan.png';
+    this.caption_image = this.tableData['caption_image'] ? this.tableData['caption_image'] : '../../../assets/pack5/transforming.png';
+    this.caption_logo = this.tableData['caption_logo'] ? this.tableData['caption_logo'] : '../../../assets/pack5/aazadi.png';
+
+    this.image = _DomSanitizationService.bypassSecurityTrustUrl(this.tableData['cautionary_symbol_picture']);
+    console.log(this.image.changingThisBreaksApplicationSecurity)
+    // localStorage.setItem('auth_session', res['result'].length > 0 ? this.tableData['auth_session'] : '');
 
 
     // this.route.queryParams.subscribe( params =>  {
