@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
@@ -8,7 +8,7 @@ import { MainService } from 'src/app/services/main.service';
     templateUrl: 'location-details.component.html',
     styleUrls: ['location-details.component.scss']
 })
-export class LocationDetailComponent implements OnInit {
+export class LocationDetailComponent {
 
     form: FormGroup;
     lat: any;
@@ -23,6 +23,7 @@ export class LocationDetailComponent implements OnInit {
     showError: boolean = false;
     status: boolean = false;
     numberCheck = ['0', '1', '2', '3', '4'];
+    audio = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3';
 
     constructor(private formBuilder: FormBuilder,
         private mainService: MainService,
@@ -37,16 +38,19 @@ export class LocationDetailComponent implements OnInit {
         })
     }
 
-    ngOnInit() {
-        console.log('ngoninit')
-        this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
-        this.getEmailAndNumber();
-        this.coordinates = this.askForLocation();
+    // onAudioPlay() {
+    //     console.log('audio called');
+    //     this.audioPlayerRef.nativeElement.play();
+    // }
+
+    playAudio() {
+        let audio = new Audio();
+        audio.src = this.audio;
+        audio.load();
+        audio.play();
     }
 
     validateNumber(event) {
-        // console.log(this.form.controls);
-        console.log(this.form.controls['mobile'].value[0])
         if (this.form.controls['mobile'].value && this.numberCheck.includes(this.form.controls['mobile'].value[0])) {
             this.form.controls['mobile'].markAsTouched()
         }
@@ -75,7 +79,6 @@ export class LocationDetailComponent implements OnInit {
 
     getEmailAndNumber() {
         this.mainService.getNumber().subscribe(res => {
-            console.log(res['result']);
             res['result'].map(item => {
                 localStorage.setItem(item.name, item.value)
             })
@@ -110,7 +113,6 @@ export class LocationDetailComponent implements OnInit {
     }
 
     submit() {
-        console.log(this.form.value);
         let obj = {
             username: this.form.get('name').value,
             phone_no: this.form.get('mobile').value,
@@ -122,7 +124,6 @@ export class LocationDetailComponent implements OnInit {
         this.mainService.sendLocationDetails(obj, auth).subscribe(res => {
             console.log(res);
         })
-
         if (this.showError) {
             this.router.navigateByUrl('/Error');
         } else if (!this.status) {
