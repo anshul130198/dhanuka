@@ -21,8 +21,9 @@
                     <img class="product-url" [src]="photoURL(tableData['product_picture'])">
                     <img class="geniune" src="../../../assets/icons/1-loop-stamp-GIF1.gif">
                 </div>
-                <div class="thanksmsg">Thank you for scanning GENUINE DHANUKA {{tableData.packaging_level}}.<div> QR Code
-                    details:</div>
+                <div class="thanksmsg">Thank you for scanning GENUINE DHANUKA {{tableData.packaging_level}}.<div> QR
+                        Code
+                        details:</div>
                 </div>
             </div>
             <div class="table-container">
@@ -30,8 +31,9 @@
                     <!-- <ng-container *ngFor="let item of data | keyvalue: originalOrder"> -->
                     <ng-container *ngFor="let item of data | keyvalue: originalOrder">
                         <!-- tableData -->
-                        <tr
-                            *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && item.key != 'leaflet_information' && item.key != 'product_video' && item.key !='product_name'">
+                        <tr *ngIf="item.key != 'cautionary_symbol' && item.key != 'label_information' && 
+                            item.key != 'leaflet_information' && item.key != 'product_video' && 
+                            item.key !='product_name' && item.key != 'customer_care_no' ">
                             <td class="right-border bottom-border">{{data[item.key]}}</td>
                             <td class="bottom-border">{{tableData[item.key]}}</td>
                         </tr>
@@ -39,34 +41,50 @@
                             <td class="right-border bottom-border name">
                                 <!--<a href="{{tableData['product_url']}}" target="_blank">
                                     <b>{{data[item.key]}}</b></a>-->
-                                    {{data[item.key]}}
+                                {{data[item.key]}}
                             </td>
                             <td class="bottom-border special_td" id="redirectLink">
-                            <a href="{{tableData['product_url']}}" target="_blank">{{tableData[item.key]}}<div id="product_detail">(Click to view product details.)</div></a>
-                                    <!-- <img src="../../../assets/icons/hand.gif"> -->      
+                                <a href="{{tableData['product_url']}}" target="_blank">{{tableData[item.key]}}<div
+                                        id="product_detail">(Click to view product details.)</div></a>
+                                <!-- <img src="../../../assets/icons/hand.gif"> -->
                                 <!--<img src="../../../assets/icons/hand.gif">-->
                                 <img style="width:35px;" src="../../../assets/icons/hand-pointer.gif">
                             </td>
                         </tr>
-                        <tr *ngIf="item.key == 'cautionary_symbol'">
+                        <tr class="cautionary-symbol" *ngIf="item.key == 'cautionary_symbol'">
                             <td class="right-border bottom-border">{{data[item.key]}}</td>
                             <!-- <td class="bottom-border" id="caution_td"><img src="{{item.value['imgurl']}}"><p>{{item.value['name']}}</p></td> -->
                             <td class="bottom-border" id="caution_td">
-                                <img width="80px" height="80px" [src]="photoURL(tableData['cautionary_symbol_picture'])">
                                 <!-- <img class="geniune" src="../../../assets/icons/geniune.svg"> -->
                                 <p>{{tableData[item.key]}}</p>
+                                <img width="80px" height="80px"
+                                    [src]="photoURL(tableData['cautionary_symbol_picture'])">
                             </td>
                         </tr>
                         <tr
                             *ngIf="item.key == 'label_information' || item.key == 'leaflet_information' || item.key == 'product_video' ">
                             <td class="right-border bottom-border">{{data[item.key]}}</td>
-                            <td class="bottom-border" id="redirectLink"><a href="{{tableData[item.key]}}" target="_blank">Click
+                            <td class="bottom-border" id="redirectLink"><a href="{{tableData[item.key]}}"
+                                    target="_blank">Click
                                     on the link to see</a></td>
+                        </tr>
+                        <tr class="customer-number" *ngIf="item.key == 'customer_care_no'">
+                            <td class="right-border bottom-border">
+                                <a href="tel:{{tableData[item.key]}}" target="_parent">
+                                    {{data[item.key]}}
+                                </a>
+                            </td>
+                            <td class="bottom-border" id="redirectLink">
+                                <a href="tel:{{tableData[item.key]}}" target="_parent">
+                                    {{tableData[item.key]}}
+                                </a>
+                            </td>
                         </tr>
                     </ng-container>
                 </table>
                 <div class="disclaimer">
-                    <span>Disclaimer</span>: Product image is for illustration only. Design on actual product pack may differ from shown product image.
+                    <span>Disclaimer</span>: Product image is for illustration only. Design on actual product pack may
+                    differ from shown product image.
                 </div>
             </div>
         </div>
@@ -90,12 +108,12 @@
                             <img class="kissan" src="../../../assets/pack5/kisaan.png">
                             <img class="transform" src="../../../assets/pack5/transforming.png">
                         </div>
-                            <div class="mobileHeading">
-                                <p>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
-                            </div>
+                        <div class="mobileHeading">
+                            <p>PROVIDING INNOVATIVE CROP SOLUTION TO INDIAN AGRICULTURE FROM PAST 4 DECADES</p>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
     <div class="endFooter">
@@ -103,4 +121,3 @@
         <img src="../../../assets/pack5/trust-of.png">
     </div>
 </div>
-

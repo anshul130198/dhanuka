@@ -13,15 +13,15 @@ export class MainService {
 
     // encodeURIComponent
     getProductData(obj) {
-        return this.http.post(`${this.baseUrl}api/qrcode-auth-logs`, obj);
+        return this.http.post(`${this.baseUrl}qrcode-auth-logs`, obj);
     }
 
     sendLocationDetails(obj, auth) {
-        return this.http.put(`${this.baseUrl}api/update/qrcode-auth-logs/${auth}`, obj)
+        return this.http.put(`${this.baseUrl}update/qrcode-auth-logs/${auth}`, obj)
     }
 
     getNumber() {
-        return this.http.get(`${this.baseUrl}api/general-preferences/whatspp-email`)
+        return this.http.get(`${this.baseUrl}general-preferences/whatspp-email`)
     }
 
 }
