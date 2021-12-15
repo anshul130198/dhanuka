@@ -29,7 +29,10 @@ export class LocationDetailComponent {
         private mainService: MainService,
         private route: ActivatedRoute,
         private router: Router) {
-        console.log('working!!!')
+        console.log('working!!!');
+        this.getProductData(this.route.snapshot.queryParamMap.get('URL'));
+        this.getEmailAndNumber();
+        this.coordinates = this.askForLocation();
 
         this.form = this.formBuilder.group({
             name: ['', [Validators.required, Validators.maxLength(100)]],
