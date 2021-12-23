@@ -7,7 +7,7 @@
     <div class="main-container">
         <div id="MobileHeader" class="TopHeader">
             <div class='leftIcon'>
-                <img src="../../../assets/pack5/aazadi.png">
+                <img src="{{caption_logo}}">
             </div>
             <div class='rightIcon'>
                 <img src="../../../assets/pack5/dhanuka logo.png">
@@ -75,8 +75,11 @@
                                 </a>
                             </td>
                             <td class="bottom-border" id="redirectLink">
-                                <a href="tel:{{tableData[item.key]}}" target="_parent">
-                                    {{tableData[item.key]}}
+                                <a class="customer-number-value" href="tel:{{tableData[item.key]}}" target="_parent">
+                                    <img src="../../../assets/icons/phone.svg">
+                                    <span>
+                                        {{tableData[item.key]}}
+                                    </span>
                                 </a>
                             </td>
                         </tr>

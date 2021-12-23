@@ -117,6 +117,11 @@
                         color: #00642e !important;
                     }
                 }
+
+                .customer-number-value {
+                    display: flex;
+                    align-items: center;
+                }
             }
 
         // table tr:nth-child(even){
