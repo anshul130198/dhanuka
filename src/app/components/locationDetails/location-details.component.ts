@@ -15,7 +15,7 @@ export class LocationDetailComponent {
     long: any;
     coordinates;
     @ViewChild('mobile') Search: ElementRef;
-    showError: boolean = false;
+    showError: boolean = true;
     status: boolean = false;
     numberCheck = ['0', '1', '2', '3', '4'];
     audio = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3';
@@ -34,18 +34,6 @@ export class LocationDetailComponent {
             mobile: ["", [Validators.required, Validators.pattern("([5-9][0-9]{9})$")]],
             location: ["", Validators.maxLength(100)],
         })
-    }
-
-    // onAudioPlay() {
-    //     console.log('audio called');
-    //     this.audioPlayerRef.nativeElement.play();
-    // }
-
-    playAudio() {
-        let audio = new Audio();
-        audio.src = this.audio;
-        audio.load();
-        audio.play();
     }
 
     validateNumber(event) {
@@ -92,6 +80,8 @@ export class LocationDetailComponent {
             // url: decodeURIComponent(url)
         }
         this.mainService.getProductData(obj).subscribe(res => {
+            this.showError = false;
+            console.log(res['status']);
             localStorage.setItem('tableData', JSON.stringify(res['result'][0]));
             localStorage.setItem('status', res['status']);
             localStorage.setItem('auth_session', res['result'][0]['auth_session']);

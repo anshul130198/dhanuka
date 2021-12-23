@@ -75,8 +75,11 @@
                                 </a>
                             </td>
                             <td class="bottom-border" id="redirectLink">
-                                <a href="tel:{{tableData[item.key]}}" target="_parent">
-                                    {{tableData[item.key]}}
+                                <a class="customer-number-value" href="tel:{{tableData[item.key]}}" target="_parent">
+                                    <img src="../../../assets/icons/phone.svg">
+                                    <span>
+                                        {{tableData[item.key]}}
+                                    </span>
                                 </a>
                             </td>
                         </tr>
