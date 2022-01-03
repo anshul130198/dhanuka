@@ -62,12 +62,19 @@
             width: auto;
         }
         .geniune{
-            width: 170%;
-            top: -32px;
+            // width: 170%;
+            // top: -32px;
+            // position: absolute;
+            // left: -74px;   
+            // max-height: 300px;
+            // max-width: 300px      
+            /* left: -74px; */
+            /* top: -32px; */
             position: absolute;
-            left: -74px;   
-            max-height: 300px;
-            max-width: 300px                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+            max-height: 200px;
+            max-width: 300px;
+            bottom: -48px;
+            right: -20px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         }
     }
     .table-container {
@@ -140,13 +147,13 @@
         p{
             margin-top: auto;
             margin-bottom: auto;
-            font: normal normal bold 15px/20px Roboto;
+            // font: normal normal bold 15px/20px Roboto;
         }
     }
     #redirectLink{
         a{
             text-decoration: none;
-                font: normal normal bold 15px/20px Roboto;
+                // font: normal normal bold 15px/20px Roboto;
                 color: #0044FF;
                 cursor: pointer;
         }

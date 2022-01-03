@@ -20,7 +20,7 @@ export class LocationDetailComponent {
     caption_logo: any;
     showData: boolean = false;
     @ViewChild('mobile') Search: ElementRef;
-    showError: boolean = false;
+    showError: boolean = true;
     status: boolean = false;
     numberCheck = ['0', '1', '2', '3', '4'];
     audio = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3';
@@ -97,6 +97,7 @@ export class LocationDetailComponent {
             // url: decodeURIComponent(url)
         }
         this.mainService.getProductData(obj).subscribe(res => {
+            this.showError = false;
             localStorage.setItem('tableData', JSON.stringify(res['result'][0]));
             localStorage.setItem('status', res['status']);
             localStorage.setItem('auth_session', res['result'][0]['auth_session']);
